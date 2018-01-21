@@ -1,0 +1,29 @@
+.m-views-my-reviews {
+    .m-count {
+        background-color: $c1;
+    }
+    .media {
+        border-color: $c11;
+        background-color: $c1;
+
+        .right {
+            .section {
+                background-color: $c11;
+
+                .section-row {
+                    color: $c8;
+                }
+
+                .arrow-right {
+                    &:before,
+                    &:after {
+                        border-left-color: $c5;
+                    }
+                    &:after {
+                        border-left-color: $c11;
+                    }
+                }
+            }
+        }
+    }
+}

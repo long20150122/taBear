@@ -1,0 +1,45 @@
+// 发现首页颜色
+.m-views-find {
+    .tabs {
+        .nav {
+            background-color: $c1;
+            color: $c4;
+            // box-shadow: 0 r(2) r(8) 0 rgba($c0, 0.1);
+
+            &:before {
+                background-image: linear-gradient(180deg
+                , rgba($c0, 0.1)
+                , transparent);
+            }
+
+            &-item {
+                &.active {
+                    color: $c8;
+                }
+            }
+
+            &-indicator {
+                >span {
+                    background-color: $c8;
+                }
+            }
+        }
+    }
+
+    .info {
+        background-color: $c1;
+    }
+
+    .ad-container {
+        background-color: $c2;
+    }
+
+    .card {
+        background-color: $c1;
+        box-shadow: 0 r(1) r(4) 0 rgba($c0, 0.08);
+
+        .row-3 {
+            color: $c5;
+        }
+    }
+}

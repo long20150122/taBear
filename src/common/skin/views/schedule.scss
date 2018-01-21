@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+//影片排期
+.m-views-schedule{
+  background-color: $c1;
+  .m-movie{
+    background-color: $c1;
+    .title {
+      color: $c7;
+      @include box-shadow(0 1px 8px rgba($black, 0.07));
+    }
+    .price {
+      .item {
+        .method {
+          color: $c7;
+        }
+        &.open{
+          @include solid(1px, $c3, bottom, false);
+          .num{
+            color: $c9;
+          }
+          .icon{
+            color: $c1;
+          }
+        }
+        .btn{
+          color: $c8;
+        }
+        .arrow-right{
+          &:before,
+          &:after {
+            border-left-color: $c8;
+          }
+          &:after {
+            border-left-color: $c1;
+          }
+        }
+        .num{
+          color: $c6;
+        }
+      }
+    }
+  }
+  .m-movie-detail{
+    background-color: $c1;
+    .title {
+      color: $c7;
+      @include box-shadow(0 1px 8px rgba($black, 0.07));
+    }
+    .address {
+      @include solid(1px, $c2, bottom);
+      .name {
+        color: $c7;
+      }
+      .time {
+        color: $c5;
+      }
+      .location {
+        color: $c5;
+      }
+    }
+    .service {
+      .list-title {
+        color: $c6;
+      }
+      .list {
+        .item {
+          .service-name {
+            .name {
+              @include solid(1px, $c8);
+              color: rgba($c8, 0.8);
+            }
+          }
+          .service-explain {
+            color: $c6;
+          }
+        }
+      }
+    }
+  }
+  .top {
+    .cinema {
+      color: $c4;
+      .arrow {
+        &:before,
+        &:after {
+          border-left-color: $c4;
+        }
+        &:after {
+          border-left-color: $c1;
+        }
+      }
+    }
+    .ad {
+      @include solid(1px, rgba($c8, 0.4));
+      background-color: rgba($c8, 0.2);
+      .name {
+        color: $c8;
+      }
+      .information {
+        color: rgba($c8, 0.8);
+      }
+      .arrow-right {
+        &:before,
+        &:after {
+          border-left-color: $c8;
+        }
+        &:after {
+          border-left-color: #ECE8FF;
+        }
+      }
+    }
+  }
+  .swiper-slide-active{
+    .movie {
+      @include solid(1px, $c1);
+      box-shadow: 2px 2px 8px rgba($c8, 0.25);
+    }
+  }
+  .filter-blur{
+    .overlay{
+      background-color: rgba($c8, .3);
+    }
+  }
+  .time-list {
+    background-color: rgba($c8, 0.05);
+    color: $c5;
+    .slide-active {
+      color: $c8;
+      &:before{
+        background-color: $c8;
+      }
+    }
+  }
+  .movieName {
+    .name {
+      color: $c7;
+      .score{
+        color: $c8;
+      }
+    }
+    .type {
+      color: $c5;
+    }
+
+    .arrow-right{
+      &:before,
+      &:after {
+        border-left-color: $c4;
+      }
+      &:after {
+        border-left-color: $c1;
+      }
+    }
+  }
+  .discount {
+    @include solid(1px, $c3, bottom);
+    .card {
+      color: $c9;
+      background-color: rgba($c9, 0.08);
+      @include solid(1px, rgba($c9, 0.08));
+    }
+    .word {
+      color: $c6;
+      .rmb {
+        color: $c9;
+      }
+    }
+  }
+  .day {
+    color: $c15;
+    .line {
+      @include solid(1px, rgba($c15, 0.7), bottom);
+    }
+  }
+  .night {
+    color: $c12;
+    .line {
+      @include solid(1px, rgba($c12, 0.7), bottom);
+    }
+  }
+  .film-items {
+    .item {
+      @include solid(1px, $c3, bottom);
+    }
+    .date{
+      .hour {
+        color: $c7;
+      }
+      .end {
+        color: $c5;
+      }
+    }
+    .lang{
+      .type {
+        color:$c7;
+      }
+      .hall {
+        color: $c5;
+      }
+    }
+    .arrow-right {
+      &:before,
+      &:after {
+        border-left-color: $c4;
+      }
+      &:after {
+        border-left-color: $c1;
+      }
+    }
+
+    .compare {
+      @include solid(1px, $c8);
+      color: $c8;
+    }
+    .price {
+      .num {
+        color: rgba($c9, 0.7);
+      }
+       .vipCard {
+         .card {
+           color: $c1;
+           background-color: rgba($c9, 0.7);
+           @include solid(1px, transparent, top left bottom);
+         }
+         .number {
+           @include solid(1px, rgba($c9, 0.7), top right bottom);
+           color: rgba(rgba($c9, 0.7), 0.7);
+           background-color: $c1;
+         }
+       }
+    }
+  }
+}

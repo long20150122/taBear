@@ -1,0 +1,199 @@
+@charset "UTF-8";
+// 影片详情颜色
+.m-views-movie {
+    .banner {
+        .btn-photo {
+            color: #ccc;
+        }
+        .btn-play {
+            background-color: rgba($c0, .5);
+            border-color: $c1;
+        }
+        &:before {
+            @include gradient-vertical(rgba($c0, 0.9), rgba($c0, 0) 24%, rgba($c0, 0) 75%, rgba($c0, 0.8) 100%);
+        }
+    }
+    .card {
+        background-color: $c1;
+        box-shadow: 0 r(1) r(4) 0 rgba($c0, 0.08);
+        .outer-side {
+            color: $c1;
+        }
+        .title {
+            >span:nth-of-type(2) {
+                color: $c9;
+            }
+            >span:nth-of-type(3) {
+                color: $c9;
+            }
+        }
+        .tags {
+            .length,
+            .types {
+                color: $c5;
+            }
+        }
+        .badge {
+            background-color: $c14;
+            color: $c1;
+            border-color: $c14;
+
+            &.right {
+                background-color: $c1;
+                color: $c5;
+            }
+        }
+        .content {
+            color: $c6;
+        }
+        >.row .switch {
+            border-color: $c5;
+        }
+    }
+    .actors {
+        background-color: $c1;
+        .row-2 {
+            color: $c6;
+        }
+        .row-3 {
+            color: $c5;
+        }
+    }
+    .stat {
+        background-color: $c1;
+        .item {
+            border-color: $c11;
+            .row-1 {
+                color: $c9;
+            }
+            .row-2 {
+                color: $c5;
+            }
+        }
+    }
+    .info {
+        background-color: $c1;
+        .header {
+            border-color: $c11;
+            .more {
+                color: $c5;
+            }
+            .arrow-right {
+                &:before,
+                &:after {
+                    border-left-color: $c5;
+                }
+                &:after {
+                    border-left-color: $c1;
+                }
+            }
+        }
+    }
+    .reviews {
+        background-color: $c1;
+        .header {
+            border-color: $c11;
+        }
+        .media {
+            border-color: $c11;
+            .right {
+                .row-2 {
+                    color: $c6;
+                }
+                .row-last {
+                    color: $c5;
+                }
+            }
+        }
+        .footer {
+            background-color: $c2;
+            color: $c4;
+
+            .line {
+                @include solid(2px, rgba($c14, 1), bottom);
+            }
+
+            &.footer-1 {
+                background-color: $c1;
+            }
+        }
+    }
+    .footer {
+        .msg {
+            background-color: #f9f1c3;
+            color: #f99700;
+        }
+        .console {
+            background-color: $c1;
+            &:before {
+                background-image: linear-gradient(0, rgba($c0, 0.05), transparent 80%)
+            }
+            .left {
+                color: $c8;
+            }
+            .right {
+                .btn {
+                    background-color: $c8;
+                    color: $c1;
+                    box-shadow: 0 r(4) r(12) 0 rgba($c8, 0.5);
+                }
+            }
+        }
+    }
+    .lightbox {
+        background-color: rgba(#000, 0.9);
+        color: $c1;
+
+        .footer {
+            .btn {
+                border-color: $c1;
+                color: $c1;
+            }
+        }
+    }
+    .player {
+        background-color: rgba(#000, 0.9);
+    }
+}
+
+.m-views-movie .m-popup {
+    .review-form {
+        background-color: $c1;
+        .header {
+            // border-color: $c2;
+            box-shadow: 0 0 r(15) 0rem rgba($c0, 0.04);
+            .title {
+                color: $c7;
+            }
+        }
+        .body {
+            .row-2 {
+                color: $c5;
+                .review-active {
+                    color: $c8;
+                }
+            }
+            .row-3 {
+                .item {
+                    border-color: $c5;
+                    color: $c5;
+                }
+            }
+            .row-4 {
+                color: $c4;
+                >.writing {
+                    border-color: $c3;
+                    box-shadow: none;
+                    color: $c7;
+                }
+            }
+        }
+        .footer {
+            .btn {
+                background-color: $c8;
+                color: $c1;
+                box-shadow: 0 r(5) r(10) r(-1) rgba($c8, 0.5);
+            }
+        }
+    }
+}

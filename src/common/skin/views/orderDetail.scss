@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+//订单详情颜色值
+.m-views-orderDetail{
+  .m-content{
+    &.finish{
+      .status{
+        color: $c5;
+      }
+      .ticket-code{
+        color: $c5;
+        .code{
+          color: $c5;
+        }
+      }
+    }
+  }
+  .order-status{
+    background-color: $c1;
+    @include solid(1px, $c11, bottom);
+    .name{
+      color: $c6;
+    }
+    .status{
+      color: $c8;
+    }
+  }
+  .order-detail{
+    background-color: $c1;
+    .title{
+      .name{
+        color: $c7;
+      }
+      .lang{
+        color: $c5;
+      }
+    }
+    .video-hall{
+      color: $c6;
+    }
+    .film-date{
+      color: $c7;
+    }
+  }
+  .goods{
+    border-top: 1px dashed $c11;
+    .good-code{
+      color: $c6;
+      .code{
+        color: $c7;
+      }
+    }
+    .combo-item{
+      color: $c6;
+    }
+    .more{
+      color: $c4;
+      .arrow-down{
+        &:before,
+        &:after {
+          border-top-color: $c4;
+        }
+        &:after {
+          border-top-color: $c1;
+        }
+      }
+    }
+  }
+  .split-line{
+    border-bottom: 1px dashed $c11;
+    &:before,&:after{
+      background-color: $c2;
+    }
+  }
+  .ticket-code{
+    color: $c6;
+    .code{
+      color: $c8;
+    }
+  }
+  .qr-code{
+    @include solid(1px, $c11);
+  }
+  .ticket-items{
+    color: $c5;
+  }
+}

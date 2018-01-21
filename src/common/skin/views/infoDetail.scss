@@ -1,0 +1,113 @@
+.m-views-info-detail {
+    .info-article {
+        background-color: $c1;
+    }
+    .section-2 {
+        color: $c5;
+        .badge {
+            background-color: $c2;
+            color: $c5;
+        }
+    }
+    .section-4 {
+        @include mask-image(linear-gradient(180deg, $c1 50%, transparent 100%));
+        &.expanded {
+            @include mask-image(none);
+        }
+        &.short {
+            @include mask-image(none);
+        }
+    }
+    .section-5 {
+        .switch {
+            color: $c8;
+            border-color: $c8;
+        }
+        .arrow {
+            &:before,
+            &:after {
+                border-left-color: $c8;
+            }
+            &:after {
+                border-left-color: $c1;
+            }
+        }
+    }
+
+
+    .movie {
+        background-color: $c1;
+        .btn-play {
+            background-color: rgba($c0, .3);
+        }
+
+        .badge {
+            border-color: $c8;
+            >span {
+                &:nth-child(1) {
+                    background-color: $c8;
+                    color: $c1;
+                }
+
+                &:nth-child(2) {
+                    background-color: $c1;
+                    color: $c8;
+                }
+            }
+        }
+
+        .btn-ticket {
+            background-color: $c12;
+            color: $c1;
+            box-shadow: 0 0 r(8) 0 rgba($c12, .5);
+        }
+
+        .left {
+            box-shadow: 0 0 r(8) 0 rgba($c0, 0.1);
+        }
+
+        .center {
+            .row-1 {
+                color: $c7;
+            }
+            .row-3,.row-4 {
+                color: $c5;
+            }
+        }
+
+        .right {
+            .row-1 {
+                color: $c9;
+            }
+        }
+    }
+
+    .category {
+        background-color: $c1;
+
+        .nav {
+            .nav-item.active {
+                color: $c8;
+            }
+
+            .nav-list {
+                background-color: $c1;
+                &:before {
+                    @include gradient-vertical(rgba($c0, 0.1), transparent);
+                }
+            }
+
+            .nav-indicator {
+                >span {
+                    background-color: $c8;
+                }
+            }
+        }
+
+        .cate-content {
+            .swiper-slide {
+                background-color: $c1;
+            }
+        }
+    }
+}

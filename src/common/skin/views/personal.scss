@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+//我的颜色值
+.m-views-personal{
+  .cinema{
+    background-color: $c13;
+    .name{
+      color: $c1;
+    }
+    .arrow-right{
+      &:before,
+      &:after {
+        border-left-color: $c1;
+      }
+      &:after {
+        border-left-color: $c13;
+      }
+    }
+  }
+  .photo{
+    .me{
+      background-color: #a891ff;
+    }
+    .name{
+      color: $c1;
+      text-shadow: 0 2px 4px $c8;
+    }
+  }
+  .nav-items{
+    .item{
+      em{
+        background-color: $c1;
+        color: $c8;
+      }
+      .name{
+        color: $c1;
+      }
+    }
+  }
+  .card-title{
+    background-color: $c1;
+    @include solid(1px, $c3);
+    .member{
+      color: $c7;
+    }
+    .sub{
+      color: $c5;
+    }
+    .open{
+      color: $c8;
+    }
+    .arrow-right{
+      &:before,
+      &:after {
+        border-left-color: $c8;
+      }
+      &:after {
+        border-left-color: $c1;
+      }
+    }
+  }
+  .me-items{
+    background-color: $c1;
+    .item{
+      .name{
+        color: $c7;
+      }
+    }
+  }
+  .swiper-container{
+    background-color: $c1;
+  }
+
+  .member-card-gray{
+    background-color: $c11;
+    .title{
+      color: $c8;
+    }
+    .btn-group{
+      .btn{
+        color: $c8;
+        @include solid(1px, $c8);
+        &.dark{
+          background-color: $c8;
+          color: $c1;
+        }
+      }
+    }
+  }
+
+  .member-card {
+    .btn {
+      color: $c1;
+      @include solid(2px, $c1);
+    }
+    .overlay {
+      background-color: rgba($c4, 0.5);
+    }
+    .section-1 {
+      color: $c1;
+    }
+    .card-type {
+      color: $c1;
+    }
+  }
+
+  .m-more{
+    background-color: $c1;
+    .title{
+      @include box-shadow(0 0 10px rgba($c5, 0.1));
+      .name{
+        color: $c7;
+      }
+    }
+  }
+
+  .more-items{
+    background-color: $c1;
+    .item{
+      @include box-shadow(0 0 10px rgba($c5, 0.1));
+      .name{
+        color: $c7;
+      }
+    }
+  }
+  .m-pwd{
+    .title{
+      color: $c7;
+    }
+    .item{
+      @include solid(1px, $c11);
+      color: $c6;
+    }
+    .key-input{
+      @include solid(1px, $c11);
+      color: $c4;
+    }
+    .full-fill {
+      background: $c4;
+    }
+  }
+
+  .m-qr-code{
+    background-color: $c1;
+    .title{
+      @include box-shadow(0 0 10px rgba($c5, 0.1));
+    }
+  }
+
+  .show-code{
+    @include solid(1px, $c3, bottom);
+    .desc{
+      color: $c6;
+    }
+  }
+
+  .card-info{
+    .logo{
+      color: $c7;
+    }
+    .film-name{
+      color: $c6;
+    }
+    .card-code{
+      color: $c7;
+    }
+  }
+}

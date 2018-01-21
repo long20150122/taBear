@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+//首页颜色值
+.m-views-index{
+  background-color: $c16;
+  .swiper-pagination-bullet{
+    background-color: rgba($c2, 0.8);
+  }
+  .swiper-pagination-bullet-active{
+    background-color: $c8;
+  }
+  .m-index-tab{
+    background-color: $c1;
+    @include box-shadow(0 2px 10px rgba($c5, 0.1));
+    .item{
+      color: $c5;
+      .arrow-right{
+        &:before,
+        &:after {
+          border-left-color: $c5;
+        }
+        &:after {
+          border-left-color: $c1;
+        }
+      }
+    }
+    .selected{
+      color: $c8;
+      &:before{
+        background-color: $c8;
+      }
+    }
+  }
+  .hot-title{
+    background-color: $c1;
+    .name{
+      color: $c7;
+    }
+    .text{
+      color: $c5;
+    }
+    .arrow-right{
+      &:before,
+      &:after {
+        border-left-color: $c5;
+      }
+      &:after {
+        border-left-color: $c1;
+      }
+    }
+  }
+  .top-grossing-movie{
+    %border-bottom{
+      @include solid(1px, $c11, bottom);
+    }
+    .movie-title{
+      color: $c4;
+      .line{
+        @include solid(1px, $c4, bottom);
+      }
+    }
+    .movie-info{
+      background-color: $c1;
+      @include box-shadow(0 0 6px rgba($black, 0.1));
+    }
+    .filter-blur{
+      .overlay{
+        background-color: rgba($c8, .3);
+      }
+    }
+    .info{
+      .text,.desc{
+        color: $c1;
+      }
+      .score{
+        color: $c10;
+      }
+      .type{
+        color: rgba($c1, 0.7);
+      }
+      .give-like{
+        .line{
+          @include solid(1px, rgba($c1, 0.7), right);
+        }
+      }
+    }
+    .photos{
+      @extend %border-bottom;
+    }
+    .activity{
+      @extend %border-bottom;
+      .icon{
+        color: $c9;
+        @include solid(1px, $c9);
+      }
+      .text{
+        color: $c6;
+      }
+    }
+    .video-signal{
+      @extend %border-bottom;
+      .icon{
+        color: $c8;
+        @include solid(1px, $c8);
+      }
+      .text{
+        color: $c6;
+      }
+    }
+    .btn-group{
+      .btn{
+        background-color: $c8;
+        box-shadow: 2px 2px 8px rgba($c8, 0.3);
+        &:active{
+          background-color: rgba($c8, 0.7);
+        }
+        .name{
+          color: $c1;
+        }
+        .sub{
+          color: $c10;
+        }
+      }
+    }
+    .movie-good{
+     background-color: $c18;
+      .name{
+        color: $c7;
+      }
+      .desc{
+        color: $c5;
+      }
+      .price{
+        color: $c9;
+      }
+      .btn{
+        //background-color: $c1;
+        @include solid(1px, $c8);
+        color: $c8;
+      }
+    }
+  }
+}

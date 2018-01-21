@@ -1,0 +1,97 @@
+.m-views-seats {
+    .header {
+        background-color: $c1;
+        .arrow-right,
+        .arrow-left {
+            &:before,
+            &:after {
+                border-left-color: $c5;
+            }
+            &:after {
+                border-left-color: $c1;
+            }
+        }
+
+        .row-1 {
+            .center {
+                .center-row-1 {
+                    color: $c7;
+                }
+                .center-row-2 {
+                    color: $c8;
+                }
+            }
+        }
+
+        .row-2 {
+            color: $c5;
+        }
+    }
+    .seats-content {
+        .screen {
+            color: $c1;
+            background-color: $c14;
+        }
+        .side-bar {
+            background-color: rgba(#777, .5);
+            color: $c1;
+        }
+        .seats-main {
+            .center-line {
+                border-color: $c14;
+            }
+            .seats-main-content {
+                .center-line {
+                    border-color: $c14;
+                }
+            }
+        }
+    }
+    .ad-container {
+        background-color: $c2;
+    }
+    .footer {
+        background-color: $c1;
+        .section-1 {
+            &.selected {
+                .item {
+                    >span {
+                        color: $c6;
+                    }
+                }
+            }
+            .content {
+                .item {
+                    color: $c5;
+                    border-color: $c4;
+                }
+                .item-wrapper {
+                    .circle {
+                        border-color: $c4;
+                        background-color: $c1;
+                    }
+                }
+            }
+        }
+        .section-2 {
+            .left {
+                color: $c5;
+                &.active {
+                    >span:nth-child(1) {
+                        color: $c9;
+                    }
+                }
+            }
+            .right {
+                .btn-submit {
+                    background-color: $c8;
+                    color: $c1;
+                    box-shadow: r(2) r(2) r(10) rgba($c8, 0.3), r(-2) 0 r(10) rgba($c8, 0.3);
+                    &.disabled {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}

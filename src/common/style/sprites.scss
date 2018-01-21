@@ -1,0 +1,420 @@
+//随机数字
+@function parse-random($value) {
+  @return round(random() * $value);
+}
+$randomId3493_HASH: parse-random(1000000);
+
+$spriteSrc3493_HASH:'../../../images/sprites/default/sprite.png?v=#{$randomId3493_HASH}';
+
+$spriteWidth3493_HASH: 545px;
+$spriteHeight3493_HASH: 506px;
+$acti-eye: -179px -380px 40px 24px;
+$acti-thumb: -270px -329px 34px 35px;
+$balance: -248px 0px 49px 56px;
+$bd: -468px 0px 45px 45px;
+$bg-card: -236px -271px 46px 36px;
+$call-out: -116px -329px 50px 42px;
+$cinema: -423px -432px 26px 24px;
+$clock: -521px -159px 20px 20px;
+$close: -312px -329px 33px 34px;
+$comment: 0px -329px 50px 43px;
+$coupon: -58px -329px 50px 42px;
+$detail: -364px 0px 42px 54px;
+$dialog-close: -224px -329px 38px 37px;
+$dislike-selected: -414px -54px 46px 46px;
+$dislike: -414px -108px 46px 46px;
+$double-sided-arrow: -521px -131px 20px 20px;
+$download: -521px -36px 21px 26px;
+$edit: -58px -271px 48px 48px;
+$egg: -521px 0px 24px 28px;
+$eye: -227px -380px 38px 23px;
+$feedback: -178px -271px 50px 40px;
+$find-selected: -468px -160px 44px 46px;
+$find: -468px -106px 44px 46px;
+$footer-good: -305px 0px 51px 51px;
+$footer-review: -305px -123px 50px 51px;
+$footer-share: -305px -182px 50px 51px;
+$gift: -66px -142px 56px 64px;
+$home-selected: 0px -215px 56px 48px;
+$home: -64px -215px 56px 48px;
+$hook: -364px -299px 26px 18px;
+$hook1: -353px -329px 33px 33px;
+$hook2: -383px -432px 32px 24px;
+$light: -139px -380px 32px 34px;
+$like-selected: -414px 0px 46px 46px;
+$like: -414px -162px 46px 46px;
+$location-1: -36px -432px 30px 36px;
+$location: -521px -70px 20px 24px;
+$lost: 0px -88px 95px 46px;
+$me-selected: -248px -120px 48px 48px;
+$me: -248px -64px 48px 48px;
+$member-card-tag: -128px -215px 72px 36px;
+$mobile: -74px -432px 29px 36px;
+$more: -305px -241px 30px 6px;
+$msg: -151px -432px 32px 30px;
+$my: -468px -53px 45px 45px;
+$night: -521px -102px 21px 21px;
+$open-vip: 0px -142px 58px 65px;
+$order: -56px -380px 36px 39px;
+$pay-fail: 0px 0px 80px 80px;
+$pay-success: -88px 0px 79px 80px;
+$pay: -174px -329px 42px 37px;
+$pen: -468px -378px 42px 42px;
+$phone: -175px -71px 62px 62px;
+$place: -521px -187px 18px 22px;
+$play-white: -521px -217px 17px 20px;
+$play: 0px -432px 28px 40px;
+$pwd: -100px -380px 31px 36px;
+$qq: -414px -270px 45px 46px;
+$qr-code: 0px -271px 50px 50px;
+$question: -414px -324px 45px 46px;
+$recharge: -114px -271px 56px 41px;
+$seat-empty: -364px -109px 42px 39px;
+$seat-mark-1: -191px -432px 32px 30px;
+$seat-mark-2: -231px -432px 32px 30px;
+$seat-mark-3: -111px -432px 32px 30px;
+$seat-mark-4: -208px -215px 72px 30px;
+$seat-mark-5: -248px -176px 34px 30px;
+$seat-my: -364px -62px 42px 39px;
+$seat-other: -364px -156px 42px 39px;
+$shop: -130px -142px 62px 57px;
+$stage-photo: -347px -432px 28px 28px;
+$star-empty: -364px -203px 40px 40px;
+$star-full: -364px -251px 40px 40px;
+$star-half: -200px -142px 40px 40px;
+$star: -175px 0px 65px 63px;
+$store-selected: -468px -270px 42px 48px;
+$store: -468px -214px 42px 48px;
+$sun: 0px -480px 26px 26px;
+$tb: -414px -216px 45px 46px;
+$thumb-active: -309px -432px 30px 30px;
+$thumb: -271px -432px 30px 30px;
+$unlock: -305px -59px 46px 56px;
+$use: -290px -271px 40px 33px;
+$used: -468px -326px 42px 44px;
+$vip: -103px -88px 54px 44px;
+$wx: 0px -380px 48px 44px;
+
+@function px2rem3493_HASH ($px) {
+  @if (type-of($px) == "number") {
+    @return $px / 75px * 1rem;
+  }
+  @if (type-of($px) == "list") {
+    @if (nth($px, 1) == 0 and nth($px, 2) != 0) {
+      @return 0 nth($px, 2) / 75px * 1rem;
+    } @else if (nth($px, 1) == 0 and nth($px, 2) == 0)  {
+      @return 0 0;
+    } @else if (nth($px, 1) != 0 and nth($px, 2) == 0) {
+      @return nth($px, 1) / 75px * 1rem 0;
+    } @else {
+      @return nth($px, 1) / 75px *1rem nth($px, 2) / 75px * 1rem;
+    }
+  }
+}
+
+@function strip-units3493_HASH($number){
+  @return $number / ($number * 0 + 1);
+}
+
+@function format-zero3493_HASH($number){
+	@if $number == 0 {
+		@return 1;
+	}@else{
+		@return $number;
+	}
+}
+
+@mixin sprite-width3493_HASH($sprite, $precision) {
+	@if $precision {
+		width: px2rem3493_HASH(nth($sprite, 3));
+	}@else{
+		width: px2rem3493_HASH(nth($sprite, 3) + 2px);
+	}
+	
+}
+
+@mixin sprite-height3493_HASH($sprite, $precision) {
+	@if $precision {
+		height: px2rem3493_HASH(nth($sprite, 4));
+	}@else{
+		height: px2rem3493_HASH(nth($sprite, 4) + 2px);
+	}
+}
+
+@mixin sprite-position3493_HASH($sprite, $precision) {
+	@if $precision {
+		background-position: strip-units3493_HASH(nth($sprite, 1)) / strip-units3493_HASH(nth($sprite, 3) - $spriteWidth3493_HASH) * 100%  strip-units3493_HASH(nth($sprite, 2)) / format-zero3493_HASH(strip-units3493_HASH(nth($sprite, 4) - $spriteHeight3493_HASH)) * 100%;
+	}@else{
+		background-position: strip-units3493_HASH(nth($sprite, 1)) / strip-units3493_HASH(nth($sprite, 3) + 1 - $spriteWidth3493_HASH) * 100%  strip-units3493_HASH(nth($sprite, 2)) / format-zero3493_HASH(strip-units3493_HASH(nth($sprite, 4) + 1 - $spriteHeight3493_HASH)) * 100%;
+	}
+}
+
+@mixin sprite3493_HASH($sprite, $precision) {
+	@include sprite-position3493_HASH($sprite, $precision);
+	@include sprite-width3493_HASH($sprite, $precision);
+	@include sprite-height3493_HASH($sprite, $precision);
+    background-image: url('#{$spriteSrc3493_HASH}');
+	background-repeat: no-repeat;
+	background-size: px2rem3493_HASH(($spriteWidth3493_HASH, $spriteHeight3493_HASH));
+    display: inline-block;
+}
+
+
+.icon-acti-eye {
+    @include sprite3493_HASH($acti-eye, false);
+}
+.icon-acti-thumb {
+    @include sprite3493_HASH($acti-thumb, false);
+}
+.icon-balance {
+    @include sprite3493_HASH($balance, false);
+}
+.icon-bd {
+    @include sprite3493_HASH($bd, false);
+}
+.icon-bg-card {
+    @include sprite3493_HASH($bg-card, false);
+}
+.icon-call-out {
+    @include sprite3493_HASH($call-out, false);
+}
+.icon-cinema {
+    @include sprite3493_HASH($cinema, false);
+}
+.icon-clock {
+    @include sprite3493_HASH($clock, false);
+}
+.icon-close {
+    @include sprite3493_HASH($close, false);
+}
+.icon-comment {
+    @include sprite3493_HASH($comment, false);
+}
+.icon-coupon {
+    @include sprite3493_HASH($coupon, false);
+}
+.icon-detail {
+    @include sprite3493_HASH($detail, false);
+}
+.icon-dialog-close {
+    @include sprite3493_HASH($dialog-close, false);
+}
+.icon-dislike-selected {
+    @include sprite3493_HASH($dislike-selected, false);
+}
+.icon-dislike {
+    @include sprite3493_HASH($dislike, false);
+}
+.icon-double-sided-arrow {
+    @include sprite3493_HASH($double-sided-arrow, false);
+}
+.icon-download {
+    @include sprite3493_HASH($download, false);
+}
+.icon-edit {
+    @include sprite3493_HASH($edit, false);
+}
+.icon-egg {
+    @include sprite3493_HASH($egg, false);
+}
+.icon-eye {
+    @include sprite3493_HASH($eye, false);
+}
+.icon-feedback {
+    @include sprite3493_HASH($feedback, false);
+}
+.icon-find-selected {
+    @include sprite3493_HASH($find-selected, false);
+}
+.icon-find {
+    @include sprite3493_HASH($find, false);
+}
+.icon-footer-good {
+    @include sprite3493_HASH($footer-good, false);
+}
+.icon-footer-review {
+    @include sprite3493_HASH($footer-review, false);
+}
+.icon-footer-share {
+    @include sprite3493_HASH($footer-share, false);
+}
+.icon-gift {
+    @include sprite3493_HASH($gift, false);
+}
+.icon-home-selected {
+    @include sprite3493_HASH($home-selected, false);
+}
+.icon-home {
+    @include sprite3493_HASH($home, false);
+}
+.icon-hook {
+    @include sprite3493_HASH($hook, false);
+}
+.icon-hook1 {
+    @include sprite3493_HASH($hook1, false);
+}
+.icon-hook2 {
+    @include sprite3493_HASH($hook2, false);
+}
+.icon-light {
+    @include sprite3493_HASH($light, false);
+}
+.icon-like-selected {
+    @include sprite3493_HASH($like-selected, false);
+}
+.icon-like {
+    @include sprite3493_HASH($like, false);
+}
+.icon-location-1 {
+    @include sprite3493_HASH($location-1, false);
+}
+.icon-location {
+    @include sprite3493_HASH($location, false);
+}
+.icon-lost {
+    @include sprite3493_HASH($lost, false);
+}
+.icon-me-selected {
+    @include sprite3493_HASH($me-selected, false);
+}
+.icon-me {
+    @include sprite3493_HASH($me, false);
+}
+.icon-member-card-tag {
+    @include sprite3493_HASH($member-card-tag, false);
+}
+.icon-mobile {
+    @include sprite3493_HASH($mobile, false);
+}
+.icon-more {
+    @include sprite3493_HASH($more, false);
+}
+.icon-msg {
+    @include sprite3493_HASH($msg, false);
+}
+.icon-my {
+    @include sprite3493_HASH($my, false);
+}
+.icon-night {
+    @include sprite3493_HASH($night, false);
+}
+.icon-open-vip {
+    @include sprite3493_HASH($open-vip, false);
+}
+.icon-order {
+    @include sprite3493_HASH($order, false);
+}
+.icon-pay-fail {
+    @include sprite3493_HASH($pay-fail, false);
+}
+.icon-pay-success {
+    @include sprite3493_HASH($pay-success, false);
+}
+.icon-pay {
+    @include sprite3493_HASH($pay, false);
+}
+.icon-pen {
+    @include sprite3493_HASH($pen, false);
+}
+.icon-phone {
+    @include sprite3493_HASH($phone, false);
+}
+.icon-place {
+    @include sprite3493_HASH($place, false);
+}
+.icon-play-white {
+    @include sprite3493_HASH($play-white, false);
+}
+.icon-play {
+    @include sprite3493_HASH($play, false);
+}
+.icon-pwd {
+    @include sprite3493_HASH($pwd, false);
+}
+.icon-qq {
+    @include sprite3493_HASH($qq, false);
+}
+.icon-qr-code {
+    @include sprite3493_HASH($qr-code, false);
+}
+.icon-question {
+    @include sprite3493_HASH($question, false);
+}
+.icon-recharge {
+    @include sprite3493_HASH($recharge, false);
+}
+.icon-seat-empty {
+    @include sprite3493_HASH($seat-empty, false);
+}
+.icon-seat-mark-1 {
+    @include sprite3493_HASH($seat-mark-1, false);
+}
+.icon-seat-mark-2 {
+    @include sprite3493_HASH($seat-mark-2, false);
+}
+.icon-seat-mark-3 {
+    @include sprite3493_HASH($seat-mark-3, false);
+}
+.icon-seat-mark-4 {
+    @include sprite3493_HASH($seat-mark-4, false);
+}
+.icon-seat-mark-5 {
+    @include sprite3493_HASH($seat-mark-5, false);
+}
+.icon-seat-my {
+    @include sprite3493_HASH($seat-my, false);
+}
+.icon-seat-other {
+    @include sprite3493_HASH($seat-other, false);
+}
+.icon-shop {
+    @include sprite3493_HASH($shop, false);
+}
+.icon-stage-photo {
+    @include sprite3493_HASH($stage-photo, false);
+}
+.icon-star-empty {
+    @include sprite3493_HASH($star-empty, false);
+}
+.icon-star-full {
+    @include sprite3493_HASH($star-full, false);
+}
+.icon-star-half {
+    @include sprite3493_HASH($star-half, false);
+}
+.icon-star {
+    @include sprite3493_HASH($star, false);
+}
+.icon-store-selected {
+    @include sprite3493_HASH($store-selected, false);
+}
+.icon-store {
+    @include sprite3493_HASH($store, false);
+}
+.icon-sun {
+    @include sprite3493_HASH($sun, false);
+}
+.icon-tb {
+    @include sprite3493_HASH($tb, false);
+}
+.icon-thumb-active {
+    @include sprite3493_HASH($thumb-active, false);
+}
+.icon-thumb {
+    @include sprite3493_HASH($thumb, false);
+}
+.icon-unlock {
+    @include sprite3493_HASH($unlock, false);
+}
+.icon-use {
+    @include sprite3493_HASH($use, false);
+}
+.icon-used {
+    @include sprite3493_HASH($used, false);
+}
+.icon-vip {
+    @include sprite3493_HASH($vip, false);
+}
+.icon-wx {
+    @include sprite3493_HASH($wx, false);
+}

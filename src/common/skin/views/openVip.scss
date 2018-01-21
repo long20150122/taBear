@@ -1,0 +1,113 @@
+@charset "UTF-8";
+.m-views-openvip {
+    .tips {
+        color: #f99700;
+        background-color: #f9f1c3;
+    }
+}
+.m-openvip-type {
+    background-color: $c1;
+    >div {
+        color: $c7;
+        border-bottom: 1px solid $c2;
+    }
+    .check {
+        border: 1px solid $c4;
+    }
+    .active{
+        background-color: $c8; 
+    }
+}
+.m-openvip-content {
+    background: $c1;
+    >div:nth-child(n+2) {
+        border-bottom: 1px solid $c2;
+    }
+    .title{
+        border-bottom: 1px solid $c2;
+        color: $c7;
+    }
+    .name {
+        color: $c6;
+    }
+    input {
+        color: $c7;
+    }
+    ::-webkit-input-placeholder {
+        color: $c4;
+    }
+    .code {
+        color: $c8;
+        border: 1px solid $c8;
+    }
+    .check {
+        border: 1px solid $c8;
+    }
+    .condtion {
+        color: $c8;
+    }
+}
+.m-openvip-foot{
+    background: $c1;
+    span {
+        color: $c9;
+        &:nth-child(3) {
+            color: $c5;
+        }
+    }
+    .open {
+        color: $c1;
+        background-color: $c8;
+        box-shadow: 0px 0px 10px rgba(140, 161, 255, 0.5); 
+    }
+
+}
+.m-openvip-header {
+    background-color: $c1;
+    box-shadow: 0px 0px 10px rgba(153, 153, 153, 0.5);
+    .another {
+        border: 1px solid $c8;
+        color: $c8;
+    }
+    .layout-2 {
+        .item {
+            div:nth-child(2) {
+                color: $c7;
+            }
+            div:last-child{
+                color: $c5;
+            }
+        }
+    }
+    .layout-3 {
+        color: $c8;
+        background-color: #fafafa;
+    }
+    .arrow-right {
+        &:before,
+        &:after {
+            border-left-color: $c8;
+        }
+        &:after {
+            border-left-color: $c1;
+        }
+    }
+}
+.m-card-policy {
+    background-color: $c1;
+    .title {
+        color: $c7;
+        box-shadow: 0px 0px 10px rgba(153, 153, 153, 0.1);
+    }
+}
+.m-card-policy {
+    .item1 {
+        color: $c7;
+        &:before {
+            background: $c8;
+        }
+    }
+    .item2 {
+        color: $c6;
+    }
+}

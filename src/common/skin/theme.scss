@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/*******
+默认样式
+ */
+@import "../style/common";
+@import "./views/movie";
+@import "./views/index";
+@import "./views/upcoming";
+@import "./views/seats";
+@import "./views/orderDetail";
+@import "./views/goodDetail";
+@import "./views/personal";
+@import "./views/schedule";
+@import "./views/order";
+@import "./views/myOrder";
+@import "./views/meal";
+@import "./views/result";
+@import "./views/myReviews";
+@import "./views/openMemberCard";
+@import "./views/bindMemberCard";
+@import "./views/openVip";
+@import "./views/find";
+@import "./views/inquire";
+@import "./views/infoDetail";
+@import "./views/vipRecharge";
+
+//自定义弹出框颜色值
+.m-mobile-dialog{
+  background: $c1;
+  box-shadow: 0 0 10px rgba($c8,.4);
+  .dialog-msg{
+    color: $c7;
+  }
+  .dialog-wait{
+    background-color: rgba($c0, 0.5);
+    i{
+      background-color: $c1;
+    }
+  }
+  .dialog-content{
+    color: $c7;
+  }
+  .dialog-items{
+    .q-btn{
+      color: $c8;
+      @include solid(1px, $c8);
+    }
+    .q-ok{
+      color: $c1;
+      background-color: $c8;
+      box-shadow: 2px 2px 8px rgba($c8, 0.3);
+      &:active{
+        background-color: rgba($c8, 0.7);
+      }
+    }
+  }
+}
+
+//滚动加载
+.m-scroll-loading{
+  .ani-loading{
+    .ani-1,.ani-2,.ani-3{
+      background-color: $c8;
+    }
+  }
+  .text{
+    color: $c8;
+  }
+}
+
+//底部导航
+.m-nav-items{
+  background-color: rgba($c1, 0.95);
+  box-shadow: 0 0 10px rgba($c0,.08);
+  .nav-item{
+    &:active{
+      background-color: rgba($c0, 0.05);
+    }
+    .name{
+      color: $c5;
+      &.selected{
+        color: $c8;
+      }
+    }
+  }
+}
+
+//绑定手机号
+.m-bind-mobile{
+  background-color: $c1;
+  .title{
+    @include box-shadow(0 0 10px rgba($c5, 0.1));
+    .name{
+      color: $c7;
+    }
+  }
+  .form-items{
+    .item{
+      @include solid(1px, $c11, bottom);
+      input{
+        color: $c7;
+      }
+      .code{
+        color: $c8;
+        @include solid(1px, $c11, left);
+        &.gray{
+          color: $c5;
+        }
+      }
+    }
+  }
+  .btn{
+    color: $c1;
+    background-color: $c8;
+    box-shadow: 2px 2px 8px rgba($c8, 0.3);
+    &:active{
+      background-color: rgba($c8, 0.7);
+    }
+  }
+}
+
+// 会员卡卡片
+@mixin member-card-bg($color: $c8) {
+  background-color: $color;
+  box-shadow: 0 0 0.3rem 0.1rem rgba($color, 0.2);
+}
+.m-member-card-container {
+  &.member-card-1 {
+    color: $c-card-1;
+  }
+  &.member-card-2 {
+    color: $c-card-2;
+  }
+  &.member-card-3 {
+    color: $c-card-3;
+  }
+  &.member-card-4 {
+    color: $c-card-4;
+  }
+  &.member-card-5 {
+    color: $c-card-5;
+  }
+}
+.m-member-card {
+  color: $c1;
+  &.member-card-1 {
+    @include member-card-bg($c-card-1);
+  }
+  &.member-card-2 {
+    @include member-card-bg($c-card-2);
+  }
+  &.member-card-3 {
+    @include member-card-bg($c-card-3);
+  }
+  &.member-card-4 {
+    @include member-card-bg($c-card-4);
+  }
+  &.member-card-5 {
+    @include member-card-bg($c-card-5);
+  }
+
+  .circle-1,
+  .circle-2,
+  .circle-3 {
+      box-shadow: 0 0.1rem 0.5rem 0rem rgba($c0, 0.1);
+  }
+
+  .circle-1 {
+      background-image: linear-gradient(0deg, rgba($c0, 0.1), rgba($c0, 0) 20%);
+  }
+
+  .member-card-desc-1 {
+    opacity: 0.7;
+  }
+}
+
+// 切换影城banner
+.m-select-cinema {
+  background-color: $c1;
+  .display {
+    &-row-1 {
+      color: $c7;
+    }
+    &-row-2 {
+      color: $c5;
+    }
+  }
+  .select {
+    color: $c8;
+    border-color: $c2;
+  }
+}
+
+// 页面网络请求错误的提示
+.m-error {
+  color: $c4;
+  .btn{
+    background-color: transparent;
+    @include solid(1px, $c8);
+    color: $c8;
+  }
+}
+
+// 影讯的媒体对象
+.m-media-object-news {
+  border-color: $c3;
+  .row-last {
+    color: $c4;
+
+    .badge {
+      background-color: $c2;
+      color: $c5;
+    }
+  }
+}

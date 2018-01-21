@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.m-views-upcoming{
+  .swiper-pagination-bullet{
+    background-color: rgba($c2, 0.8);
+  }
+  .swiper-pagination-bullet-active{
+    background-color: $c8;
+  }
+  .m-upcoming-tab{
+    background-color: $c1;
+    @include box-shadow(0 2px 10px rgba($c5, 0.1));
+    .item{
+      color: $c5;
+      .arrow-right{
+        &:before,
+        &:after {
+          border-left-color: $c5;
+        }
+        &:after {
+          border-left-color: $c1;
+        }
+      }
+    }
+    .selected{
+      color: $c8;
+      &:before{
+        background-color: $c8;
+      }
+    }
+  }
+  .upcoming-date{
+    color: $c6;
+    .name{
+      color: $c6;
+    }
+  }
+  .movie-item{
+    background-color: $c1;
+    &:before{
+      @include solid(1px, $c2, bottom);
+    }
+  }
+  .movie-details{
+    .image{
+      .play{
+        background-color: rgba($black, 0.6);
+      }
+    }
+    .info{
+      .title{
+        color: $c7;
+      }
+      .film-logo{
+        .m1{
+          color: $c1;
+          background-color: $c14;
+          @include solid(1px, $c14, top left bottom);
+        }
+        .m2{
+          @include solid(1px, $c16, top right bottom);
+          color: $c4;
+          background-color: $c1;
+        }
+      }
+      .desc{
+        color: $c5;
+      }
+      .name{
+        color: $c5;
+      }
+    }
+    .shop{
+      .num{
+        color: $c9;
+      }
+      .btn{
+        color: $c8;
+        @include solid(1px, $c8);
+        &.watch{
+          color: $c1;
+          @include solid(1px, $c14);
+          background-color: $c14;
+          box-shadow: 2px 2px 8px rgba($c14, 0.3);
+        }
+      }
+    }
+  }
+  .movie-sale{
+    @include solid(1px, $c2, top);
+    .icon{
+      color: $c9;
+      @include solid(1px, $c9);
+    }
+    .text{
+      color: $c9;
+    }
+  }
+  .movie-watch{
+    @include solid(1px, $c2, top);
+    .icon{
+      color: $c8;
+      @include solid(1px, $c8);
+    }
+    .text{
+      color: $c8;
+    }
+  }
+  .upcoming-tips{
+    @include solid(1px, rgba($c8, 0.4));
+    background-color: $c17;
+    .text{
+      color: $c8;
+    }
+    .arrow-right{
+      &:before,
+      &:after {
+        border-left-color: $c8;
+      }
+      &:after {
+        border-left-color: $c17;
+      }
+    }
+  }
+}

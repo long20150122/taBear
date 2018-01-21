@@ -1,0 +1,263 @@
+@charset "UTF-8";
+//确认订单页
+.m-views-order {
+    .time {
+        color: #f99700;
+        background: rgba(255, 227, 74, 0.3);
+    }
+    .layout-1 {
+        background: $c1;
+        .film {
+            color: $c7;
+            span {
+                color: $c5;
+            }
+        }
+        .date {
+            color: #a08dff;
+        }
+        .cinema {
+            color: $c6;
+        }
+        .seat {
+            color: $c6;
+            span {
+                color: $c7;
+            }
+        }
+    }
+    .m-order-content {
+        >div {
+            background: $c1;
+        }
+    }
+    .layout-2,
+    .layout-4 {
+        >div {
+            color: $c7;
+            border-top: 1px solid $c2;
+        }
+        .ticket {
+            span {
+                color: $c5;
+            }
+            >div:nth-child(2) {
+                color: $c6;
+            }
+        }
+        .foods {
+            >div {
+                span {
+                    color: $c5;
+                }
+            }
+            >div:nth-child(2) {
+                color: $c6;
+            }
+        }
+        .coupon,
+        .active,
+        .reduce,
+        .total {
+            .action1 {
+                color: $c5;
+                .arrow-right {
+                    @include arrows-r(rem(-15px), 0, $c5, r(15px));
+                }
+            }
+            .action2 {
+                color: $c8;
+                .arrow-right {
+                    @include arrows-r(rem(-25px), 0, $c5, r(15px));
+                }
+            }
+            .action3 {
+                color: $c9;
+            }
+            .action4 {
+                color: $c6;
+            }
+        }
+    }
+    .layout-3 {
+        .tips {
+            color: $c5;
+        }
+        .more {
+            .arrow-right {
+                &:before,
+                &:after {
+                    border-left-color: $c8;
+                }
+                &:after {
+                    border-left-color: $c1;
+                }
+            }
+        }
+        .info {
+            div:nth-child(1) {
+                color: $c7;
+            }
+            div:nth-child(2) {
+                color: $c5;
+            }
+            div:nth-child(3) {
+                color: $c9;
+            }
+        }
+        .add,
+        .reduce {
+            border: 1px solid $c8;
+            color: $c8;
+        }
+        .count {
+            color: $c6;
+        }
+    }
+    .layout-4 {
+        color: $c6;
+        .phone {
+            color: $c7;
+        }
+    }
+    .layout-5 {
+        color: $c7;
+        >div {
+            border-bottom: 1px solid $c2;
+            div:nth-child(2) {
+                color: $c9;
+            }
+        }
+        .open_card {
+            border: 1px solid $c8;
+            color: $c8;
+        }
+        .rest {
+            color: $c5;
+        }
+        .check {
+            border: 1px solid $c4;
+        }
+        .active {
+            background: $c8;
+        }
+    }
+    .layout-6 {
+        color: $c5;
+        background: $c2 !important;
+        >div {
+            background: $c1;
+            box-shadow: 0 0 10px rgba(153, 153, 153, 0.1);
+        }
+        .tips {
+            .back {
+                color: $c5;
+            }
+            .change {
+                color: $c8;
+            }
+        }
+        .pay {
+            color: $c9;
+            .waitpay {
+                color: $c7;
+            }
+            .service {
+                color: $c5;
+            }
+            .payOrder {
+                background-color: $c8;
+                color: $c1;
+                //box-shadow: 0 0px 10px $c8;
+                box-shadow: 2px 2px 10px rgba($c8, 0.5);
+            }
+        }
+    }
+}
+.m-order-meals {
+    color: $c7;
+    background-color: $c1;
+    .title {
+        box-shadow: 0px 0px 10px rgba(155, 155, 155, 0.1);
+    }
+    .layout-1 {
+        .item {
+            .name {
+                color: $c7;
+            }
+            .content {
+                color: $c5;
+            }
+            .price {
+                color: $c9;
+            }
+            .reduce,
+            .add {
+                border: 1px solid $c8;
+                color: $c8;
+            }
+            .count {
+                color: $c6;
+            }
+        }
+    }
+    .layout-2 {
+        .item1>div {
+            border: 1px solid #bbbbbb;
+            span {
+                color: $c4;
+            }
+        }
+        .item2 {
+            color: $c9;
+            .waitpay {
+                color: $c7;
+            }
+            .service {
+                color: $c5;
+            }
+            .payOrder {
+                background: $c8;
+                color: $c1;
+                box-shadow: 2px 2px 10px rgba($c8, 0.5);
+            }
+        }
+    }
+}
+.m-order-payCard {
+    color: $c7;
+    background: $c1;
+    .layout-1 {
+        border-bottom: 1px solid $c2;
+    }
+    .layout-2 {
+        color: $c6;
+        border-bottom: 1px solid $c2;
+        span {
+            color: $c9;
+        }
+    }
+    .layout-3 {
+        color: $c5;
+        input {
+            border: 1px solid $c4;
+            color: $c4;
+        }
+        .square {
+            border: 1px solid $c4;
+        }
+        .square:last-child{
+            border-right: 1px solid $c4;
+        }
+        .full-fill:before {
+            background-color: $c4;;
+        }
+        p:last-child {
+            color: $c6;
+        }
+    }
+    .layout-4 {
+        color: $c1;
+        background: $c8;
+    }
+}

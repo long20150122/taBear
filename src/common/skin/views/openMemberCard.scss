@@ -1,0 +1,28 @@
+.m-views-open-member-card {
+    .arrow-right {
+        &:before,
+        &:after {
+            border-left-color: $c8;
+        }
+        &:after {
+            border-left-color: $c1;
+        }
+    }
+
+    .list {
+        background-color: $c1;
+        .title {
+            border-bottom-color: $c11;
+        }
+        .title-left {
+            color: $c7;
+        }
+        .title-right {
+            color: $c8;
+        }
+
+        .content {
+
+        }
+    }
+}
