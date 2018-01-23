@@ -348,7 +348,6 @@ export default {
                        font-weight: 600;
                        color: #fff;
                        margin-left: rem(12px);
-
                    }
                }
            }

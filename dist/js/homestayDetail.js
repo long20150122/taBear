@@ -76,7 +76,7 @@ new _vue2.default({
 
 /***/ }),
 
-/***/ 133:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -84,7 +84,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "/* reset */\nhtml, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {\n  margin: 0;\n  padding: 0;\n}\nheader, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {\n  display: block;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\ncaption, th {\n  text-align: left;\n  font-weight: normal;\n}\nhtml, body, fieldset, img, iframe, abbr {\n  border: 0;\n}\ni, cite, em, var, address, dfn {\n  font-style: normal;\n}\n[hidefocus], summary {\n  outline: 0;\n}\nli {\n  list-style: none;\n}\nh1, h2, h3, h4, h5, h6, small {\n  font-size: 100%;\n}\nsup, sub {\n  font-size: 83%;\n}\npre, code, kbd, samp {\n  font-family: inherit;\n}\nq:before, q:after {\n  content: none;\n}\ntextarea {\n  overflow: auto;\n  resize: none;\n}\nlabel, summary {\n  cursor: default;\n}\na, button {\n  cursor: pointer;\n}\nh1, h2, h3, h4, h5, h6, em, strong, b {\n  font-weight: bold;\n}\ndel, ins, u, s, a, a:hover {\n  text-decoration: none;\n}\nbody, textarea, input, button, select, keygen, legend {\n  font: 12px/1.14 Microsoft YaHei, sans-serif;\n  color: #333;\n  outline: 0;\n}\nbody {\n  background: #fff;\n}\na, a:hover {\n  color: #333;\n}\n.page-index {\n  background-color: #e4e4e4;\n}\n.page-index .banner {\n    width: 100%;\n    height: 4rem;\n    background-color: #fff;\n}\n.page-index .banner .yd-slider {\n      height: 100%;\n      overflow: hidden;\n}\n.page-index .suite-house {\n    background-color: #fff;\n    font-size: 0.4rem;\n}\n.page-index .suite-house h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper {\n      display: block;\n      white-space: nowrap;\n      overflow-x: auto;\n      overflow-y: hidden;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item {\n        width: 7.2rem;\n        height: 6.4rem;\n        display: inline-block;\n        list-style: none;\n        border: 0.08rem solid #ccc;\n        color: #666;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item > img {\n          width: 100%;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p {\n          font-size: 0.4rem;\n          margin-left: 0.4rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p span {\n            font-weight: 600;\n            height: 0.8rem;\n            line-height: 0.8rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p > span:nth-child(1) {\n            display: block;\n            font-weight: 400;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p .price {\n            color: #cc0000;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item:nth-child(1) {\n        margin-left: 0.12rem;\n}\n.page-index .facility-server {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    font-size: 0.4rem;\n}\n.page-index .facility-server h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .facility-server .facility-wrapper .facility-list {\n      display: block;\n      white-space: nowrap;\n      overflow-x: auto;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item {\n        width: 1.92rem;\n        height: 1.92rem;\n        display: inline-block;\n        list-style: none;\n        color: #666;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item .tv {\n          height: 1.2rem;\n          width: 1.2rem;\n          margin: 0 auto;\n          border-radius: 50%;\n          background-color: #ccc;\n          text-align: center;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item .tv i {\n            height: 1.2rem;\n            line-height: 1.2rem;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item span {\n          display: inline-block;\n          width: 100%;\n          text-align: center;\n          font-size: 0.36rem;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper {\n      width: 10rem;\n      height: 4.8rem;\n      position: relative;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .map {\n        width: 100%;\n        height: 100%;\n        background-color: green;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .search {\n        height: 1.44rem;\n        width: 8.96rem;\n        position: absolute;\n        left: 0.32rem;\n        bottom: 0.32rem;\n        background-color: #fff;\n        padding-left: 0.4rem;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .search .search-text {\n          display: inline-block;\n          height: 1.44rem;\n          line-height: 1.44rem;\n          color: #999;\n}\n.page-index .ms-introduce {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .ms-introduce h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .ms-introduce .introduce-wrapper {\n      margin: 0 0.56rem;\n      line-height: 0.56rem;\n      padding-bottom: 0.56rem;\n}\n.page-index .ms-introduce span {\n      position: absolute;\n      right: 0.56rem;\n      bottom: 0.04rem;\n      color: #cc0000;\n}\n.page-index .check-notice {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .check-notice h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .check-notice .notice-wrapper {\n      margin: 0 0.56rem;\n}\n.page-index .check-notice .notice-wrapper p {\n        height: 0.6rem;\n        line-height: 0.56rem;\n}\n.page-index .check-notice .notice-wrapper p span:nth-child(1) {\n          font-weight: 600;\n}\n.page-index .check-notice .notice-wrapper .cash-pladge span {\n        font-weight: 600;\n}\n.page-index .check-notice .normal {\n      padding: 0.4rem 0.56rem;\n}\n.page-index .check-notice .normal .house-rule {\n        font-weight: 600;\n}\n.page-index .check-notice .normal .rule-wrapper .row {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: flex;\n        margin-top: 0.4rem;\n}\n.page-index .check-notice .normal .rule-wrapper .row > div {\n          -webkit-box-flex: 1;\n          -webkit-flex: 1;\n                  flex: 1;\n}\n.page-index .debook-method {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .debook-method h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .debook-method div {\n      margin: 0 0.56rem;\n      border-bottom: 0.01333rem solid #ccc;\n      line-height: 0.56rem;\n      padding-top: 0.16rem;\n      padding-bottom: 0.16rem;\n}\n.page-index .debook-method div p span {\n        font-weight: 600;\n}\n", ""]);
+exports.push([module.i, "/* reset */\nhtml, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu {\n  margin: 0;\n  padding: 0;\n}\nheader, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {\n  display: block;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\ncaption, th {\n  text-align: left;\n  font-weight: normal;\n}\nhtml, body, fieldset, img, iframe, abbr {\n  border: 0;\n}\ni, cite, em, var, address, dfn {\n  font-style: normal;\n}\n[hidefocus], summary {\n  outline: 0;\n}\nli {\n  list-style: none;\n}\nh1, h2, h3, h4, h5, h6, small {\n  font-size: 100%;\n}\nsup, sub {\n  font-size: 83%;\n}\npre, code, kbd, samp {\n  font-family: inherit;\n}\nq:before, q:after {\n  content: none;\n}\ntextarea {\n  overflow: auto;\n  resize: none;\n}\nlabel, summary {\n  cursor: default;\n}\na, button {\n  cursor: pointer;\n}\nh1, h2, h3, h4, h5, h6, em, strong, b {\n  font-weight: bold;\n}\ndel, ins, u, s, a, a:hover {\n  text-decoration: none;\n}\nbody, textarea, input, button, select, keygen, legend {\n  font: 12px/1.14 Microsoft YaHei, sans-serif;\n  color: #333;\n  outline: 0;\n}\nbody {\n  background: #fff;\n}\na, a:hover {\n  color: #333;\n}\n.page-index {\n  background-color: #e4e4e4;\n}\n.page-index .banner {\n    width: 100%;\n    height: 4rem;\n    background-color: #fff;\n}\n.page-index .banner .yd-slider {\n      height: 100%;\n      overflow: hidden;\n}\n.page-index .banner .yd-slider p {\n        position: absolute;\n        bottom: 0;\n        width: 100%;\n        height: 1.2rem;\n        line-height: 0.6rem;\n        font-size: 0.4rem;\n        font-weight: 600;\n        color: #fff;\n        margin-left: 0.16rem;\n}\n.page-index .banner .yd-slider p span:nth-child(1) {\n          display: block;\n          height: 0.6rem;\n          line-height: 0.6rem;\n}\n.page-index .suite-house {\n    background-color: #fff;\n    font-size: 0.4rem;\n}\n.page-index .suite-house h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper {\n      display: block;\n      white-space: nowrap;\n      overflow-x: auto;\n      overflow-y: hidden;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item {\n        width: 7.2rem;\n        height: 6.4rem;\n        display: inline-block;\n        list-style: none;\n        border: 0.08rem solid #ccc;\n        color: #666;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item > img {\n          width: 100%;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p {\n          font-size: 0.4rem;\n          margin-left: 0.4rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p span {\n            font-weight: 600;\n            height: 0.8rem;\n            line-height: 0.8rem;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p > span:nth-child(1) {\n            display: block;\n            font-weight: 400;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item p .price {\n            color: #cc0000;\n}\n.page-index .suite-house .suite-wrapper .item-wrapper .item:nth-child(1) {\n        margin-left: 0.12rem;\n}\n.page-index .facility-server {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    font-size: 0.4rem;\n}\n.page-index .facility-server h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .facility-server .facility-wrapper .facility-list {\n      display: block;\n      white-space: nowrap;\n      overflow-x: auto;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item {\n        width: 1.92rem;\n        height: 1.92rem;\n        display: inline-block;\n        list-style: none;\n        color: #666;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item .tv {\n          height: 1.2rem;\n          width: 1.2rem;\n          margin: 0 auto;\n          border-radius: 50%;\n          background-color: #ccc;\n          text-align: center;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item .tv i {\n            height: 1.2rem;\n            line-height: 1.2rem;\n}\n.page-index .facility-server .facility-wrapper .facility-list .facility-item span {\n          display: inline-block;\n          width: 100%;\n          text-align: center;\n          font-size: 0.36rem;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper {\n      width: 10rem;\n      height: 4.8rem;\n      position: relative;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .map {\n        width: 100%;\n        height: 100%;\n        background-color: green;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .search {\n        height: 1.44rem;\n        width: 8.96rem;\n        position: absolute;\n        left: 0.32rem;\n        bottom: 0.32rem;\n        background-color: #fff;\n        padding-left: 0.4rem;\n}\n.page-index .facility-server .facility-wrapper .map-wrapper .search .search-text {\n          display: inline-block;\n          height: 1.44rem;\n          line-height: 1.44rem;\n          color: #999;\n}\n.page-index .ms-introduce {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .ms-introduce h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .ms-introduce .introduce-wrapper {\n      margin: 0 0.56rem;\n      line-height: 0.56rem;\n      padding-bottom: 0.56rem;\n}\n.page-index .ms-introduce span {\n      position: absolute;\n      right: 0.56rem;\n      bottom: 0.04rem;\n      color: #cc0000;\n}\n.page-index .check-notice {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .check-notice h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .check-notice .notice-wrapper {\n      margin: 0 0.56rem;\n}\n.page-index .check-notice .notice-wrapper p {\n        height: 0.6rem;\n        line-height: 0.56rem;\n}\n.page-index .check-notice .notice-wrapper p span:nth-child(1) {\n          font-weight: 600;\n}\n.page-index .check-notice .notice-wrapper .cash-pladge span {\n        font-weight: 600;\n}\n.page-index .check-notice .normal {\n      padding: 0.4rem 0.56rem;\n}\n.page-index .check-notice .normal .house-rule {\n        font-weight: 600;\n}\n.page-index .check-notice .normal .rule-wrapper .row {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: flex;\n        margin-top: 0.4rem;\n}\n.page-index .check-notice .normal .rule-wrapper .row > div {\n          -webkit-box-flex: 1;\n          -webkit-flex: 1;\n                  flex: 1;\n}\n.page-index .debook-method {\n    background-color: #fff;\n    margin-top: 0.4rem;\n    position: relative;\n    font-size: 0.4rem;\n}\n.page-index .debook-method h2 {\n      height: 1.2rem;\n      line-height: 1.2rem;\n      font-weight: 600;\n      margin-left: 0.24rem;\n      font-size: 0.42667rem;\n}\n.page-index .debook-method div {\n      margin: 0 0.56rem;\n      border-bottom: 0.01333rem solid #ccc;\n      line-height: 0.56rem;\n      padding-top: 0.16rem;\n      padding-bottom: 0.16rem;\n}\n.page-index .debook-method div p span {\n        font-weight: 600;\n}\n", ""]);
 
 // exports
 
@@ -175,24 +175,27 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.nav-item[data-v-30f0e9ad] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-30f0e9ad] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-30f0e9ad] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
+exports.push([module.i, "\n.nav-item[data-v-6c3199fa] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-6c3199fa] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-6c3199fa] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 169:
+/***/ 164:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "page-index"
+    staticClass: "page-index",
+    attrs: {
+      "homestayObject": _vm.homestayObject
+    }
   }, [_c('div', {
     staticClass: "banner"
   }, [_c('yd-slider', {
     attrs: {
-      "autoplay": "1000"
+      "autoplay": "0"
     }
   }, [_c('yd-slider-item', [_c('a', {
     attrs: {
@@ -200,31 +203,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "http://static.ydcss.com/uploads/ydui/1.jpg"
+      "src": _vm.homestayObject.cover
     }
-  })])]), _vm._v(" "), _c('yd-slider-item', [_c('a', {
+  })]), _vm._v(" "), (_vm.homestayObject.baseInfo !== undefined) ? _c('p', [_c('span', [_vm._v(_vm._s(_vm.homestayObject.baseInfo.name))]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.homestayObject.baseInfo.address))])]) : _vm._e()])], 1)], 1), _vm._v(" "), _c('div', {
+    staticClass: "suite-house",
     attrs: {
-      "href": "http://www.ydcss.com"
+      "houseList": _vm.houseList
     }
-  }, [_c('img', {
-    attrs: {
-      "src": "http://static.ydcss.com/uploads/ydui/2.jpg"
-    }
-  })])]), _vm._v(" "), _c('yd-slider-item', [_c('a', {
-    attrs: {
-      "href": "http://www.ydcss.com"
-    }
-  }, [_c('img', {
-    attrs: {
-      "src": "http://static.ydcss.com/uploads/ydui/3.jpg"
-    }
-  })])])], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "suite-house"
-  }, [_c('h2', [_vm._v("全部12套房间")]), _vm._v(" "), _c('div', {
+  }, [_c('h2', [_vm._v("全部"), (_vm.houseList !== undefined) ? _c('span', [_vm._v(_vm._s(_vm.houseList.length))]) : _vm._e(), _vm._v("套房间")]), _vm._v(" "), _c('div', {
     staticClass: "suite-wrapper"
   }, [_c('ul', {
     staticClass: "item-wrapper"
-  }, [_c('li', {
+  }, [_vm._l((_vm.houseList), function(item) {
+    return _c('li', {
+      key: item.id,
+      staticClass: "item"
+    }, [_c('img', {
+      attrs: {
+        "src": item.cover,
+        "alt": "test"
+      }
+    }), _vm._v(" "), _c('p', [_c('span', [_vm._v(_vm._s(item.room_name))]), _vm._v(" "), _c('span', [_c('span', {
+      staticClass: "price"
+    }, [_vm._v("¥" + _vm._s(item.week_day_price))]), _vm._v(" "), _c('span', [_vm._v(_vm._s(item.floor) + "楼," + _vm._s(item.window) + "窗")])])])])
+  }), _vm._v(" "), _c('li', {
     staticClass: "item"
   }, [_c('img', {
     attrs: {
@@ -259,14 +261,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": _vm.src,
       "alt": "test"
     }
-  }), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _c('li', {
-    staticClass: "item"
-  }, [_c('img', {
-    attrs: {
-      "src": _vm.src,
-      "alt": "test"
-    }
-  }), _vm._v(" "), _vm._m(5)])])])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8), _vm._v(" "), _vm._m(9), _vm._v(" "), _c('Button', {
+  }), _vm._v(" "), _vm._m(4)])], 2)])]), _vm._v(" "), _vm._m(5), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7), _vm._v(" "), _vm._m(8), _vm._v(" "), _c('Button', {
     on: {
       "click": _vm.handleLoginOut
     }
@@ -298,10 +293,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("disabled")])], 1)], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_c('span', [_vm._v("私奔驿站")]), _vm._v(" "), _c('span', [_c('span', {
-    staticClass: "price"
-  }, [_vm._v("¥150")]), _vm._v(" "), _c('span', [_vm._v("3楼,大床")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', [_c('span', [_vm._v("私奔驿站")]), _vm._v(" "), _c('span', [_c('span', {
     staticClass: "price"
   }, [_vm._v("¥150")]), _vm._v(" "), _c('span', [_vm._v("3楼,大床")])])])
@@ -416,7 +407,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-d8155f6c", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-72e7a1d2", module.exports)
   }
 }
 
@@ -430,7 +421,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.m-nav-items[data-v-6617b4f7] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.m-nav-items[data-v-94851278] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
 
 // exports
 
@@ -450,11 +441,11 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(20),
   /* scopeId */
-  "data-v-30f0e9ad",
+  "data-v-6c3199fa",
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\common\\plugin\\appNav\\appItem.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\common\\plugin\\appNav\\appItem.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] appItem.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -465,9 +456,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30f0e9ad", Component.options)
+    hotAPI.createRecord("data-v-6c3199fa", Component.options)
   } else {
-    hotAPI.reload("data-v-30f0e9ad", Component.options)
+    hotAPI.reload("data-v-6c3199fa", Component.options)
   }
 })()}
 
@@ -476,23 +467,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 187:
+/***/ 182:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(133);
+var content = __webpack_require__(128);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7668bfe1", content, false);
+var update = __webpack_require__(2)("16e9d836", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d8155f6c\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-d8155f6c\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-72e7a1d2\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-72e7a1d2\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -516,11 +507,11 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(21),
   /* scopeId */
-  "data-v-6617b4f7",
+  "data-v-94851278",
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\common\\plugin\\appNav\\appNavItems.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\common\\plugin\\appNav\\appNavItems.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] appNavItems.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -531,9 +522,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6617b4f7", Component.options)
+    hotAPI.createRecord("data-v-94851278", Component.options)
   } else {
-    hotAPI.reload("data-v-6617b4f7", Component.options)
+    hotAPI.reload("data-v-94851278", Component.options)
   }
 })()}
 
@@ -586,7 +577,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-30f0e9ad", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6c3199fa", module.exports)
   }
 }
 
@@ -604,7 +595,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6617b4f7", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-94851278", module.exports)
   }
 }
 
@@ -620,13 +611,13 @@ var content = __webpack_require__(16);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("25c50148", content, false);
+var update = __webpack_require__(2)("9db5dc20", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-30f0e9ad\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-30f0e9ad\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue");
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6c3199fa\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6c3199fa\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -647,13 +638,13 @@ var content = __webpack_require__(17);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("528c4d09", content, false);
+var update = __webpack_require__(2)("64ff821a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6617b4f7\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6617b4f7\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue");
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-94851278\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-94851278\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -735,19 +726,19 @@ exports.default = plugin;
 
 
 /* styles */
-__webpack_require__(187)
+__webpack_require__(182)
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(85),
   /* template */
-  __webpack_require__(169),
+  __webpack_require__(164),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\views\\homestayDetail\\App.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\views\\homestayDetail\\App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -758,9 +749,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d8155f6c", Component.options)
+    hotAPI.createRecord("data-v-72e7a1d2", Component.options)
   } else {
-    hotAPI.reload("data-v-d8155f6c", Component.options)
+    hotAPI.reload("data-v-72e7a1d2", Component.options)
   }
 })()}
 
@@ -1041,10 +1032,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import appHeader from './Header.vue'
 // import appContent from './Content.vue'
 // import viewport from 'vlib/comp/viewport';
+
+_slider.Slider.props.showPagination = false;
 
 _vue2.default.component(_slider.Slider.name, _slider.Slider);
 _vue2.default.component(_slider.SliderItem.name, _slider.SliderItem);
@@ -1066,10 +1071,42 @@ exports.default = {
     },
     data: function data() {
         return {
-            src: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4202999563,2452815770&fm=27&gp=0.jpg'
+            src: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4202999563,2452815770&fm=27&gp=0.jpg',
+            homestayObject: {},
+            houseList: {}
         };
     },
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        var _this = this;
+
+        this.$http.get('../data.json', {
+            params: {
+                shopId: '1'
+            }
+        }).then(function (res) {
+            var data = res.data;
+            _this.homestayObject = data;
+            console.log(data);
+            console.log("res=>", res);
+        }).catch(function (err) {
+            // dialogManager.toast(err.msg || "");
+            console.log("err=>", err);
+        });
+
+        this.$http.get('../msHouseList.json', {
+            params: {
+                shopId: '1'
+            }
+        }).then(function (res) {
+            var data = res.data;
+            _this.houseList = data;
+            console.log(data);
+            console.log("res=>", res);
+        }).catch(function (err) {
+            // dialogManager.toast(err.msg || "");
+            console.log("err=>", err);
+        });
+    },
 
     methods: {
         handleLoginOut: function handleLoginOut() {

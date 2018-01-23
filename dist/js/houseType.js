@@ -564,14 +564,14 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.calendar[data-v-04a1de62] {\n    margin:auto;\n    width: 100%;\n    min-width:300px;\n    background: #fff;\n    font-family: \"PingFang SC\",\"Hiragino Sans GB\",\"STHeiti\",\"Microsoft YaHei\",\"WenQuanYi Micro Hei\",sans-serif;\n    -webkit-user-select:none;\n       -moz-user-select:none;\n            user-select:none;\n}\n.calendar-tools[data-v-04a1de62]{\n    height:40px;\n    font-size: 20px;\n    line-height: 40px;\n    color:#5e7a88;\n}\n.calendar-tools span[data-v-04a1de62]{\n    cursor: pointer;\n}\n.calendar-prev[data-v-04a1de62]{\n    width: 14.28571429%;\n    float:left;\n    text-align: center;\n}\n.calendar-info[data-v-04a1de62]{\n    padding-top: 3px;\n    font-size:16px;\n    line-height: 1.3;\n    text-align: center;\n}\n.calendar-info>div.month[data-v-04a1de62]{\n    margin:auto;\n    height:20px;\n    width:100px;\n    text-align: center;\n    color:#5e7a88;\n    overflow: hidden;\n    position: relative;\n}\n.calendar-info>div.month .month-inner[data-v-04a1de62]{\n    position: absolute;\n    left:0;\n    top:0;\n    height:240px;\n    -webkit-transition:top .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    transition:top .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n}\n.calendar-info>div.month .month-inner>span[data-v-04a1de62]{\n    display: block;\n    font-size: 14px;\n    height:20px;\n    width:100px;\n    overflow: hidden;\n    text-align: center;\n}\n.calendar-info>div.year[data-v-04a1de62]{\n   font-size:10px;\n   line-height: 1;\n   color:#999;\n}\n.calendar-next[data-v-04a1de62]{\n    width: 14.28571429%;\n    float:right;\n    text-align: center;\n}\n.calendar table[data-v-04a1de62] {\n    clear: both;\n    width: 100%;\n    margin-bottom:10px;\n    border-collapse: collapse;\n    color: #444444;\n}\n.calendar td[data-v-04a1de62] {\n    margin:2px !important;\n    padding:0px 0;\n    width: 14.28571429%;\n    height:44px;\n    text-align: center;\n    vertical-align: middle;\n    font-size:14px;\n    line-height: 125%;\n    cursor: pointer;\n    position: relative;\n    vertical-align: top;\n}\n.calendar td.week[data-v-04a1de62]{\n    font-size:10px;\n    pointer-events:none !important;\n    cursor: default !important;\n}\n.calendar td.disabled[data-v-04a1de62] {\n    color: #ccc;\n    pointer-events:none !important;\n    cursor: default !important;\n}\n.calendar td.disabled div[data-v-04a1de62]{\n    color: #ccc;\n}\n.calendar td span[data-v-04a1de62]{\n    display:block;\n    max-width:40px;\n    height:26px;\n    font-size: 16px;\n    line-height:26px;\n    margin:0px auto;\n    border-radius:20px;\n}\n.calendar td:not(.selected) span[data-v-04a1de62]:not(.red):hover{\n    background:#f3f8fa;\n    color:#444;\n}\n.calendar td:not(.selected) span.red[data-v-04a1de62]:hover{\n    background:#f9efef;\n}\n.calendar td:not(.disabled) span.red[data-v-04a1de62]{\n    color:#ea6151;\n}\n.calendar td.selected span[data-v-04a1de62]{\n    background-color: #5e7a88;\n    color: #fff;\n}\n.calendar td .text[data-v-04a1de62]{\n    position: absolute;\n    top:28px;\n    left:0;\n    right:0;\n    text-align: center;\n    \n    padding:2px;\n    font-size:8px;\n    line-height: 1.2;\n    color:#444;\n}\n.calendar td .isGregorianFestival[data-v-04a1de62],\n.calendar td .isLunarFestival[data-v-04a1de62]{\n    color:#ea6151;\n}\n.calendar td.selected span.red[data-v-04a1de62]{\n    background-color: #ea6151;\n    color: #fff;\n}\n.calendar td.selected span.red[data-v-04a1de62]:hover{\n    background-color: #ea6151;\n    color: #fff;\n}\n.calendar thead td[data-v-04a1de62] {\n  text-transform: uppercase;\n  height:30px;\n  vertical-align: middle;\n}\n.calendar-button[data-v-04a1de62]{\n    text-align: center;\n}\n.calendar-button span[data-v-04a1de62]{\n    cursor: pointer;\n    display: inline-block;\n    min-height: 1em;\n    min-width: 5em;\n    vertical-align: baseline;\n    background:#5e7a88;\n    color:#fff;\n    margin: 0 .25em 0 0;\n    padding: .6em 2em;\n    font-size: 1em;\n    line-height: 1em;\n    text-align: center;\n    border-radius: .3em;\n}\n.calendar-button span.cancel[data-v-04a1de62]{\n    background:#efefef;\n    color:#666;\n}\n.calendar-years[data-v-04a1de62]{\n    position: absolute;\n    left:0px;\n    top:60px;\n    right:0px;\n    bottom:0px;\n    background:#fff;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n            justify-content: center;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n            align-items: center;\n    -webkit-flex-wrap:wrap;\n            flex-wrap:wrap;\n    overflow: auto;\n    -webkit-transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    opacity: 0;\n    pointer-events: none;\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px);\n}\n.calendar-years.show[data-v-04a1de62]{\n    opacity: 1;\n    pointer-events: auto;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n.calendar-years>span[data-v-04a1de62]{\n    margin:1px 5px;\n    display: inline-block;\n    width:60px;\n    line-height: 30px;\n    border-radius: 20px;\n    text-align:center;\n    border:1px solid #fbfbfb;\n    color:#999;\n}\n.calendar-years>span.active[data-v-04a1de62]{\n    border:1px solid #5e7a88;\n    background-color: #5e7a88;\n    color:#fff;\n}\n", ""]);
+exports.push([module.i, "\n.calendar[data-v-3738bd2f] {\n    margin:auto;\n    width: 100%;\n    min-width:300px;\n    background: #fff;\n    font-family: \"PingFang SC\",\"Hiragino Sans GB\",\"STHeiti\",\"Microsoft YaHei\",\"WenQuanYi Micro Hei\",sans-serif;\n    -webkit-user-select:none;\n       -moz-user-select:none;\n            user-select:none;\n}\n.calendar-tools[data-v-3738bd2f]{\n    height:40px;\n    font-size: 20px;\n    line-height: 40px;\n    color:#5e7a88;\n}\n.calendar-tools span[data-v-3738bd2f]{\n    cursor: pointer;\n}\n.calendar-prev[data-v-3738bd2f]{\n    width: 14.28571429%;\n    float:left;\n    text-align: center;\n}\n.calendar-info[data-v-3738bd2f]{\n    padding-top: 3px;\n    font-size:16px;\n    line-height: 1.3;\n    text-align: center;\n}\n.calendar-info>div.month[data-v-3738bd2f]{\n    margin:auto;\n    height:20px;\n    width:100px;\n    text-align: center;\n    color:#5e7a88;\n    overflow: hidden;\n    position: relative;\n}\n.calendar-info>div.month .month-inner[data-v-3738bd2f]{\n    position: absolute;\n    left:0;\n    top:0;\n    height:240px;\n    -webkit-transition:top .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    transition:top .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n}\n.calendar-info>div.month .month-inner>span[data-v-3738bd2f]{\n    display: block;\n    font-size: 14px;\n    height:20px;\n    width:100px;\n    overflow: hidden;\n    text-align: center;\n}\n.calendar-info>div.year[data-v-3738bd2f]{\n   font-size:10px;\n   line-height: 1;\n   color:#999;\n}\n.calendar-next[data-v-3738bd2f]{\n    width: 14.28571429%;\n    float:right;\n    text-align: center;\n}\n.calendar table[data-v-3738bd2f] {\n    clear: both;\n    width: 100%;\n    margin-bottom:10px;\n    border-collapse: collapse;\n    color: #444444;\n}\n.calendar td[data-v-3738bd2f] {\n    margin:2px !important;\n    padding:0px 0;\n    width: 14.28571429%;\n    height:44px;\n    text-align: center;\n    vertical-align: middle;\n    font-size:14px;\n    line-height: 125%;\n    cursor: pointer;\n    position: relative;\n    vertical-align: top;\n}\n.calendar td.week[data-v-3738bd2f]{\n    font-size:10px;\n    pointer-events:none !important;\n    cursor: default !important;\n}\n.calendar td.disabled[data-v-3738bd2f] {\n    color: #ccc;\n    pointer-events:none !important;\n    cursor: default !important;\n}\n.calendar td.disabled div[data-v-3738bd2f]{\n    color: #ccc;\n}\n.calendar td span[data-v-3738bd2f]{\n    display:block;\n    max-width:40px;\n    height:26px;\n    font-size: 16px;\n    line-height:26px;\n    margin:0px auto;\n    border-radius:20px;\n}\n.calendar td:not(.selected) span[data-v-3738bd2f]:not(.red):hover{\n    background:#f3f8fa;\n    color:#444;\n}\n.calendar td:not(.selected) span.red[data-v-3738bd2f]:hover{\n    background:#f9efef;\n}\n.calendar td:not(.disabled) span.red[data-v-3738bd2f]{\n    color:#ea6151;\n}\n.calendar td.selected span[data-v-3738bd2f]{\n    background-color: #5e7a88;\n    color: #fff;\n}\n.calendar td .text[data-v-3738bd2f]{\n    position: absolute;\n    top:28px;\n    left:0;\n    right:0;\n    text-align: center;\n    \n    padding:2px;\n    font-size:8px;\n    line-height: 1.2;\n    color:#444;\n}\n.calendar td .isGregorianFestival[data-v-3738bd2f],\n.calendar td .isLunarFestival[data-v-3738bd2f]{\n    color:#ea6151;\n}\n.calendar td.selected span.red[data-v-3738bd2f]{\n    background-color: #ea6151;\n    color: #fff;\n}\n.calendar td.selected span.red[data-v-3738bd2f]:hover{\n    background-color: #ea6151;\n    color: #fff;\n}\n.calendar thead td[data-v-3738bd2f] {\n  text-transform: uppercase;\n  height:30px;\n  vertical-align: middle;\n}\n.calendar-button[data-v-3738bd2f]{\n    text-align: center;\n}\n.calendar-button span[data-v-3738bd2f]{\n    cursor: pointer;\n    display: inline-block;\n    min-height: 1em;\n    min-width: 5em;\n    vertical-align: baseline;\n    background:#5e7a88;\n    color:#fff;\n    margin: 0 .25em 0 0;\n    padding: .6em 2em;\n    font-size: 1em;\n    line-height: 1em;\n    text-align: center;\n    border-radius: .3em;\n}\n.calendar-button span.cancel[data-v-3738bd2f]{\n    background:#efefef;\n    color:#666;\n}\n.calendar-years[data-v-3738bd2f]{\n    position: absolute;\n    left:0px;\n    top:60px;\n    right:0px;\n    bottom:0px;\n    background:#fff;\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: flex;\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n            justify-content: center;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n            align-items: center;\n    -webkit-flex-wrap:wrap;\n            flex-wrap:wrap;\n    overflow: auto;\n    -webkit-transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    transition:all .5s cubic-bezier(0.075, 0.82, 0.165, 1);\n    opacity: 0;\n    pointer-events: none;\n    -webkit-transform: translateY(-10px);\n            transform: translateY(-10px);\n}\n.calendar-years.show[data-v-3738bd2f]{\n    opacity: 1;\n    pointer-events: auto;\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n.calendar-years>span[data-v-3738bd2f]{\n    margin:1px 5px;\n    display: inline-block;\n    width:60px;\n    line-height: 30px;\n    border-radius: 20px;\n    text-align:center;\n    border:1px solid #fbfbfb;\n    color:#999;\n}\n.calendar-years>span.active[data-v-3738bd2f]{\n    border:1px solid #5e7a88;\n    background-color: #5e7a88;\n    color:#fff;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 123:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -652,13 +652,13 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(87),
   /* template */
-  __webpack_require__(151),
+  __webpack_require__(156),
   /* scopeId */
-  "data-v-04a1de62",
+  "data-v-3738bd2f",
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\views\\houseType\\calendar.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\views\\houseType\\calendar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] calendar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -669,9 +669,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-04a1de62", Component.options)
+    hotAPI.createRecord("data-v-3738bd2f", Component.options)
   } else {
-    hotAPI.reload("data-v-04a1de62", Component.options)
+    hotAPI.reload("data-v-3738bd2f", Component.options)
   }
 })()}
 
@@ -701,7 +701,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 151:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -835,13 +835,28 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-04a1de62", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3738bd2f", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 156:
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-item[data-v-6c3199fa] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-6c3199fa] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-6c3199fa] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -965,24 +980,9 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1aa6450d", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-b4aecbc0", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.nav-item[data-v-30f0e9ad] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-30f0e9ad] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-30f0e9ad] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
-
-// exports
-
 
 /***/ }),
 
@@ -994,7 +994,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.m-nav-items[data-v-6617b4f7] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
+exports.push([module.i, "\n.m-nav-items[data-v-94851278] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
 
 // exports
 
@@ -1011,40 +1011,13 @@ var content = __webpack_require__(118);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(30)("7921118e", content, false);
+var update = __webpack_require__(30)("e7228f2a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-04a1de62\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./calendar.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-04a1de62\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./calendar.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 177:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(123);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("34526db6", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-1aa6450d\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-1aa6450d\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3738bd2f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./calendar.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-3738bd2f\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./calendar.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1068,11 +1041,11 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(20),
   /* scopeId */
-  "data-v-30f0e9ad",
+  "data-v-6c3199fa",
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\common\\plugin\\appNav\\appItem.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\common\\plugin\\appNav\\appItem.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] appItem.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -1083,14 +1056,41 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-30f0e9ad", Component.options)
+    hotAPI.createRecord("data-v-6c3199fa", Component.options)
   } else {
-    hotAPI.reload("data-v-30f0e9ad", Component.options)
+    hotAPI.reload("data-v-6c3199fa", Component.options)
   }
 })()}
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(129);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2935fa6d", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -1107,11 +1107,11 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(21),
   /* scopeId */
-  "data-v-6617b4f7",
+  "data-v-94851278",
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\common\\plugin\\appNav\\appNavItems.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\common\\plugin\\appNav\\appNavItems.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] appNavItems.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -1122,9 +1122,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6617b4f7", Component.options)
+    hotAPI.createRecord("data-v-94851278", Component.options)
   } else {
-    hotAPI.reload("data-v-6617b4f7", Component.options)
+    hotAPI.reload("data-v-94851278", Component.options)
   }
 })()}
 
@@ -1161,7 +1161,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-30f0e9ad", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6c3199fa", module.exports)
   }
 }
 
@@ -1179,7 +1179,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6617b4f7", module.exports)
+     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-94851278", module.exports)
   }
 }
 
@@ -1195,13 +1195,13 @@ var content = __webpack_require__(16);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("25c50148", content, false);
+var update = __webpack_require__(2)("9db5dc20", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-30f0e9ad\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-30f0e9ad\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue");
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6c3199fa\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6c3199fa\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appItem.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1222,13 +1222,13 @@ var content = __webpack_require__(17);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("528c4d09", content, false);
+var update = __webpack_require__(2)("64ff821a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6617b4f7\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue", function() {
-     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6617b4f7\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue");
+   module.hot.accept("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-94851278\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue", function() {
+     var newContent = require("!!../../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-94851278\",\"scoped\":true,\"hasInlineConfig\":false}!../../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./appNavItems.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -1566,19 +1566,19 @@ exports.default = plugin;
 
 
 /* styles */
-__webpack_require__(177)
+__webpack_require__(183)
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(86),
   /* template */
-  __webpack_require__(156),
+  __webpack_require__(165),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "G:\\myProject\\taBearVuedy\\src\\views\\houseType\\App.vue"
+Component.options.__file = "G:\\myProject\\taBearGitHub\\taBear\\src\\views\\houseType\\App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] App.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -1589,9 +1589,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1aa6450d", Component.options)
+    hotAPI.createRecord("data-v-b4aecbc0", Component.options)
   } else {
-    hotAPI.reload("data-v-1aa6450d", Component.options)
+    hotAPI.reload("data-v-b4aecbc0", Component.options)
   }
 })()}
 

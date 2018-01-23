@@ -1,5 +1,5 @@
 <template>
-    <div class="page-index">
+    <div class="page-index" :homestayObject="homestayObject">
         <!-- 轮播banner -->
         <div class="banner">
             <!-- <mt-swipe :auto="0" refs='swipe'>
@@ -7,36 +7,48 @@
               <mt-swipe-item class="swip-item-2 item" @click="handleBannerClick">2</mt-swipe-item>
               <mt-swipe-item class="swip-item-3 item" @click="handleBannerClick">3</mt-swipe-item>
             </mt-swipe> -->
-            <yd-slider autoplay="1000">
+            <yd-slider autoplay="0">
                 <yd-slider-item>
                     <a href="http://www.ydcss.com">
-                        <img src="http://static.ydcss.com/uploads/ydui/1.jpg">
+                        <img :src="homestayObject.cover">
                     </a>
+                    <p v-if="homestayObject.baseInfo !== undefined">
+                      <span>{{homestayObject.baseInfo.name}}</span>
+                      <span>{{homestayObject.baseInfo.address}}</span>
+                    </p>
+                    <!-- <p v-if="homestayObject.baseInfo !== undefined">{{homestayObject.baseInfo.name}}</p>
+                    <p v-if="homestayObject.baseInfo !== undefined">{{homestayObject.baseInfo.address}}</p> -->
                 </yd-slider-item>
-                <yd-slider-item>
+                <!-- <yd-slider-item>
                     <a href="http://www.ydcss.com">
                         <img src="http://static.ydcss.com/uploads/ydui/2.jpg">
                     </a>
+                    <p>私奔驿站——111111111111</p>
                 </yd-slider-item>
                 <yd-slider-item>
                     <a href="http://www.ydcss.com">
                         <img src="http://static.ydcss.com/uploads/ydui/3.jpg">
                     </a>
-                </yd-slider-item>
+                    <p>私奔驿站——111111111111</p>
+                </yd-slider-item> -->
             </yd-slider>
         </div>
         <!-- 全部套房 -->
-        <div class="suite-house">
-            <h2>全部12套房间</h2>
+        <div class="suite-house" :houseList="houseList">
+            <h2>全部<span v-if="houseList !== undefined">{{houseList.length}}</span>套房间</h2>
             <div class="suite-wrapper">
                 <ul class="item-wrapper">
-                    <li class="item">
-                        <img :src="src" alt="test">
+<!--                 <div v-for="item in houseList" :key="item.id">
+                  {{ item.room_name }}
+                </div> -->
+
+                    <li class="item" v-for="item in houseList" :key="item.id">
+                        <img :src="item.cover" alt="test">
                         <p>
-                            <span>私奔驿站</span>
+                            <span>{{item.room_name}}</span>
                             <span>
-                                <span class="price">¥150</span>
-                                <span>3楼,大床</span>
+                                <span class="price">¥{{item.week_day_price}}</span>
+                                <span>{{item.floor}}楼,{{item.window}}窗</span>
                             </span>
                         </p>
                     </li>
@@ -255,6 +267,7 @@
 
 import Vue from 'vue';
 import {Slider, SliderItem} from 'vue-ydui/dist/lib.rem/slider';
+Slider.props.showPagination = false;
 import {Button, ButtonGroup} from 'vue-ydui/dist/lib.rem/button';
 import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog';
 Vue.component(Slider.name, Slider);
@@ -278,9 +291,40 @@ export default {
     data () {
         return {
             src:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4202999563,2452815770&fm=27&gp=0.jpg',
+            homestayObject: {},
+            houseList: {}
         };
     },
-    mounted () {},
+    mounted () {
+      this.$http.get('../data.json', {
+          params: {
+              shopId: '1'
+          }
+      }).then((res) => {
+          let data = res.data;
+          this.homestayObject = data;
+          console.log(data);
+          console.log("res=>",res);
+      }).catch((err) => {
+          // dialogManager.toast(err.msg || "");
+          console.log("err=>",err);
+      })
+
+      this.$http.get('../msHouseList.json', {
+          params: {
+              shopId: '1'
+          }
+      }).then((res) => {
+          let data = res.data;
+          this.houseList = data;
+          console.log(data);
+          console.log("res=>",res);
+      }).catch((err) => {
+          // dialogManager.toast(err.msg || "");
+          console.log("err=>",err);
+      })
+
+    },
     methods: {
         handleLoginOut() {
             this.loginOut();
@@ -311,6 +355,23 @@ export default {
                height: 100%;
                overflow: hidden;
                .yd-slider-item {
+               }
+               p {
+                   position: absolute;
+                   bottom: 0;
+                   width: 100%;
+                   height: rem(90px);
+                   line-height: rem(45px);
+                   //background-color: rgba(0,0,0,0.4);
+                   font-size: rem(30px);
+                   font-weight: 600;
+                   color: #fff;
+                   margin-left: rem(12px);
+                   span:nth-child(1) {
+                      display: block;
+                      height: rem(45px);
+                      line-height: rem(45px);
+                   }
                }
            }
        }

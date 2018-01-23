@@ -1,0 +1,72 @@
+{
+    "code": 0,
+    "data": {
+        "baseInfo":{
+            "id":1,
+            "name":"天涯海角客栈",
+            "phone":"18808096756",
+            "city_id":10000,
+            "district_id":20000,
+            "address":"福田保税区市花路8号（近4号门）",
+            "latitude":"22",
+            "longitude":"14",
+            "business_circle":"较场尾",
+            "status":1
+        },
+        "moreInfo":[
+            {
+                "shop_id":1,
+                "open_time":"2018-01-02 11:22:35",
+                "decorate_time":"2018-01-05 11:22:39",
+                "high_floor":3,
+                "shop_type":1,
+                "weekend":"4,5,3,7,",
+                "checkin_begin_time":1400,
+                "checkin_end_time":200,
+                "checkout_time":464,
+                "room_num":23,
+                "description":"地方和捷克队是否看见好多烧烤警方还将扩大收费",
+                "foregift_type":0,
+                "foregift_money":0
+            }
+        ],
+        "picForIndex":{
+            "index":"",
+            "aaa":[
+
+            ]
+        },
+        "cover": "http://static.ydcss.com/uploads/ydui/1.jpg",
+        "refundRules":[
+
+        ],
+        "services":{
+            "luggage":"行李寄存",
+            "wifi":"Wi-Fi",
+            "petsCarry":"宠物携带",
+            "medicalSupport":"医疗支援"
+        },
+        "facilities":{
+            "safa":"沙发",
+            "seat":"座椅",
+            "desk":"写字台",
+            "wifi":"Wi-Fi",
+            "wiredNetwork":"有线网络",
+            "heating":"暖气",
+            "elevator":"电梯",
+            "entranceGuardSystem":"门禁系统",
+            "workspace":"工作区",
+            "parkingSpace":"停车位",
+            "tv":"电视",
+            "electricKettle":"电水壶",
+            "airConditioning":"空调",
+            "hairDryer":"吹风机",
+            "waterDispenser":"饮水机",
+            "washingMachine":"洗衣机",
+            "separateToilet":"独立卫生间",
+            "takeAShower":"淋浴",
+            "toiletPaper":"手纸",
+            "bathTowel":"浴巾"
+        }
+    }
+}
