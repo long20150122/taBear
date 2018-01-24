@@ -8,10 +8,10 @@
               <mt-swipe-item class="swip-item-3 item" @click="handleBannerClick">3</mt-swipe-item>
             </mt-swipe> -->
             <yd-slider autoplay="0">
-                <yd-slider-item>
-                    <a href="http://www.ydcss.com">
+                <yd-slider-item @click.native="show2 = true">
+                    <div>
                         <img :src="homestayObject.cover">
-                    </a>
+                    </div>
                     <p v-if="homestayObject.baseInfo !== undefined">
                       <span>{{homestayObject.baseInfo.name}}</span>
                       <span>{{homestayObject.baseInfo.address}}</span>
@@ -38,11 +38,11 @@
             <h2>全部<span v-if="houseList !== undefined">{{houseList.length}}</span>套房间</h2>
             <div class="suite-wrapper">
                 <ul class="item-wrapper">
-<!--                 <div v-for="item in houseList" :key="item.id">
+                <!--<div v-for="item in houseList" :key="item.id">
                   {{ item.room_name }}
                 </div> -->
 
-                    <li class="item" v-for="item in houseList" :key="item.id">
+                    <li class="item" v-for="item in houseList" :key="item.id" @click="showBigImg">
                         <img :src="item.cover" alt="test">
                         <p>
                             <span>{{item.room_name}}</span>
@@ -52,7 +52,7 @@
                             </span>
                         </p>
                     </li>
-                     <li class="item">
+                    <li class="item">
                          <img :src="src" alt="test">
                          <p>
                              <span>私奔驿站</span>
@@ -61,7 +61,7 @@
                                  <span>3楼,大床</span>
                              </span>
                          </p>
-                     </li>
+                    </li>
                     <li class="item">
                         <img :src="src" alt="test">
                         <p>
@@ -104,6 +104,10 @@
                     </li>
                 </ul>
             </div>
+<!--             <div class="book" @click.native="show3 = true">
+                预定
+            </div> -->
+            <yd-button class="book" @click.native="show3 = true">预定</yd-button>
         </div>
         <!-- 设施服务 -->
         <div class="facility-server">
@@ -248,6 +252,53 @@
             </div>
         </div>
 
+<yd-button size="large" type="warning" @click.native="show2 = true">下部弹出</yd-button>
+<yd-button size="large" type="warning" @click.native="show3 = true">11下部弹出</yd-button>
+
+<yd-popup v-model="show2" position="bottom" height="60%">
+    <!-- <yd-button type="warning" style="margin: 30px;" @click.native="show2 = false">Close Bottom Popup</yd-button> -->
+    <yd-lightbox class="dialog-photo">
+        <p>
+          <span>客房/套房(旅行照片)</span>
+          <span>查看所有(156)</span>
+        </p>
+        <yd-lightbox-img class="img-tf" v-for="item, key in list" :key="key" :src="item.src"></yd-lightbox-img>
+    </yd-lightbox>
+
+    <yd-lightbox class="dialog-photo">
+        <p>
+          <span>浴室(旅行照片)</span>
+          <span>查看所有(16)</span>
+        </p>
+        <yd-lightbox-img class="img-tf" v-for="item, key in list" :key="key" :src="item.src"></yd-lightbox-img>
+    </yd-lightbox>
+
+</yd-popup>
+
+<yd-popup v-model="show3" position="bottom" height="60%">
+    <!-- <yd-button type="warning" style="margin: 30px;" @click.native="show2 = false">Close Bottom Popup</yd-button> -->
+    <yd-lightbox class="select-ms">
+
+        <yd-list theme="4" class="select-list">
+            <yd-list-item v-for="item, key in listMs" :key="key">
+                <img slot="img" :src="item.img">
+                <span slot="title">{{item.title}}</span>
+                <yd-list-other slot="other">
+                    <div>
+                        <span class="demo-list-price"><em>¥</em>{{item.price}}</span>
+                        <span class="demo-list-del-price">¥{{item.w_price}}</span>
+                    </div>
+                    <!-- <div>content</div> -->
+                </yd-list-other>
+            </yd-list-item>
+        </yd-list>
+
+
+        <yd-button size="large" class="select-pre" type="warning">请选择预定房间</yd-button>
+    </yd-lightbox>
+
+</yd-popup>
+
         <Button @click="handleLoginOut">退出登录</Button>
         <div>
             <yd-button type="primary" @click.native="goHouseType">primary</yd-button>
@@ -270,6 +321,10 @@ import {Slider, SliderItem} from 'vue-ydui/dist/lib.rem/slider';
 Slider.props.showPagination = false;
 import {Button, ButtonGroup} from 'vue-ydui/dist/lib.rem/button';
 import { Confirm, Alert, Toast, Notify, Loading } from 'vue-ydui/dist/lib.rem/dialog';
+import {LightBox, LightBoxImg, LightBoxTxt} from 'vue-ydui/dist/lib.rem/lightbox';
+import {Popup} from 'vue-ydui/dist/lib.rem/popup';
+import {ListTheme, ListItem, ListOther} from 'vue-ydui/dist/lib.rem/list';
+/* 使用px：import {Accordion, AccordionItem} from 'vue-ydui/dist/lib.px/accordion'; */
 Vue.component(Slider.name, Slider);
 Vue.component(SliderItem.name, SliderItem);
 Vue.component(Button.name, Button);
@@ -281,6 +336,13 @@ Vue.prototype.$dialog = {
     notify: Notify,
     loading: Loading,
 };
+Vue.component(LightBox.name, LightBox);
+Vue.component(LightBoxImg.name, LightBoxImg);
+Vue.component(LightBoxTxt.name, LightBoxTxt);
+Vue.component(Popup.name, Popup);
+Vue.component(ListTheme.name, ListTheme);
+Vue.component(ListItem.name, ListItem);
+Vue.component(ListOther.name, ListOther);
 
 export default {
     props: ["options", "proxy"],
@@ -292,7 +354,25 @@ export default {
         return {
             src:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4202999563,2452815770&fm=27&gp=0.jpg',
             homestayObject: {},
-            houseList: {}
+            houseList: {},
+            show2: false,
+            show3: false,
+            list: [
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s1.jpg'},
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s2.jpg'},
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s3.jpg'},
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s4.jpg'},
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s5.jpg'},
+                {src: 'http://static.ydcss.com/uploads/lightbox/meizu_s6.jpg'}
+            ],
+            listMs: [
+                {img: "//img1.shikee.com/try/2016/06/23/14381920926024616259.jpg", title: "标题111标题标题标题标题", price: 156.23, w_price: 89.36},
+                {img: "//img1.shikee.com/try/2016/06/21/10172020923917672923.jpg", title: "标题222标题标题标题标题", price: 256.23, w_price: 89.36},
+                {img: "//img1.shikee.com/try/2016/06/23/15395220917905380014.jpg", title: "标题333标题标题标题标题", price: 356.23, w_price: 89.36},
+                {img: "//img1.shikee.com/try/2016/06/25/14244120933639105658.jpg", title: "标题444标题标题标题标题", price: 456.23, w_price: 89.36},
+                {img: "//img1.shikee.com/try/2016/06/26/12365720933909085511.jpg", title: "标题555标题标题标题标题", price: 556.23, w_price: 89.36},
+                {img: "//img1.shikee.com/try/2016/06/19/09430120929215230041.jpg", title: "标题666标题标题标题标题", price: 656.23, w_price: 89.36}
+            ]
         };
     },
     mounted () {
@@ -336,6 +416,9 @@ export default {
                 timeout: 20000 
             });
             //this.$router.push('/houseType');
+        },
+        showBigImg() {
+
         }
     }
 }
@@ -379,6 +462,7 @@ export default {
        .suite-house {
            background-color: #fff;
            font-size: rem(30px);
+           position: relative;
            h2 {
                height: rem(90px);
                line-height: rem(90px);
@@ -426,6 +510,23 @@ export default {
                    }
                }
            }
+            .book {
+                width: rem(120px);
+                height: rem(120px);
+                padding: 0;
+                border-radius: 50%;
+                background-color: #FF9966;
+                font-size: rem(30px);
+                text-align: center;;
+                color: #fff;
+                font-weight: 600;
+                line-height: rem(120px);
+                position: absolute;
+                right: rem(20px);
+                bottom: rem(-60px);
+                border: rem(2px) solid #fff;
+                box-shadow: 0px 0px 30px 0px rgba(1,1,1,0.6);
+            }
 
        }
 
@@ -602,5 +703,40 @@ export default {
                }
            }
        }
+   }
+   .dialog-photo {
+        background-color: rgba(1,1,1,0.2);
+        padding: rem(20px);
+        p {
+            height: rem(60px);
+            line-height: rem(60px);
+            font-size: rem(32px);
+            position: relative;
+            span:nth-child(1) {
+                position: absolute;
+                left: rem(20px);
+                text-align: left;
+            }
+            span:nth-child(2) {
+                position: absolute;
+                right: rem(20px);
+                text-align: right;
+                color: #66B6A1;
+            }
+        }
+        .img-tf {
+            width: rem(175px);
+            margin: rem(1px);
+        }
+   }
+   .select-ms {
+        .select-list {
+            padding-bottom: rem(72px);
+        }
+        .select-pre {
+            position: fixed;
+            bottom: 0;
+            margin: 0;
+        }
    }
 </style>
