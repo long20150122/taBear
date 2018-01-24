@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 108:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -480,7 +480,7 @@ exports.default = calendar;
 
 /***/ }),
 
-/***/ 109:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -490,11 +490,11 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _App = __webpack_require__(72);
+var _App = __webpack_require__(73);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _diyaxios = __webpack_require__(12);
+var _diyaxios = __webpack_require__(11);
 
 var _diyaxios2 = _interopRequireDefault(_diyaxios);
 
@@ -502,23 +502,23 @@ var _viewport = __webpack_require__(4);
 
 var _viewport2 = _interopRequireDefault(_viewport);
 
-__webpack_require__(9);
+__webpack_require__(8);
 
-var _config = __webpack_require__(6);
+var _config = __webpack_require__(5);
 
-var _lazyImage = __webpack_require__(10);
+var _lazyImage = __webpack_require__(9);
 
 var _lazyImage2 = _interopRequireDefault(_lazyImage);
 
-var _scrollLoad = __webpack_require__(11);
+var _scrollLoad = __webpack_require__(10);
 
 var _scrollLoad2 = _interopRequireDefault(_scrollLoad);
 
-var _appNav = __webpack_require__(7);
+var _appNav = __webpack_require__(6);
 
 var _appNav2 = _interopRequireDefault(_appNav);
 
-var _fastclick = __webpack_require__(13);
+var _fastclick = __webpack_require__(12);
 
 var _fastclick2 = _interopRequireDefault(_fastclick);
 
@@ -556,7 +556,7 @@ new _vue2.default({
 
 /***/ }),
 
-/***/ 118:
+/***/ 122:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -571,7 +571,7 @@ exports.push([module.i, "\n.calendar[data-v-3738bd2f] {\n    margin:auto;\n    w
 
 /***/ }),
 
-/***/ 129:
+/***/ 134:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -641,18 +641,18 @@ exports.default = {
 
 /***/ }),
 
-/***/ 142:
+/***/ 147:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(172)
+__webpack_require__(178)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(87),
+  __webpack_require__(89),
   /* template */
-  __webpack_require__(156),
+  __webpack_require__(161),
   /* scopeId */
   "data-v-3738bd2f",
   /* cssModules */
@@ -701,7 +701,22 @@ exports.default = {
 
 /***/ }),
 
-/***/ 156:
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-item[data-v-6c3199fa] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-6c3199fa] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-6c3199fa] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -841,7 +856,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 16:
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -849,14 +864,14 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.nav-item[data-v-6c3199fa] {\n  text-align: center;\n  width: 100%;\n  height: 1.30667rem;\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: flex-start;\n  align-content: flex-start;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.nav-item i[data-v-6c3199fa] {\n    margin-top: 0.16rem;\n}\n.nav-item .name[data-v-6c3199fa] {\n    padding-top: 0.08rem;\n    display: block;\n    width: 100%;\n    font-size: 0.29333rem;\n}\n", ""]);
+exports.push([module.i, "\n.m-nav-items[data-v-94851278] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 165:
+/***/ 171:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -986,28 +1001,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 17:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.m-nav-items[data-v-94851278] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-justify-content: space-around;\n  justify-content: space-around;\n  -webkit-align-items: center;\n  -webkit-box-align: center;\n          align-items: center;\n  width: 100%;\n  height: 1.30667rem;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  z-index: 10;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 172:
+/***/ 178:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(118);
+var content = __webpack_require__(122);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1067,33 +1067,6 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 183:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(129);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(2)("2935fa6d", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1130,6 +1103,33 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ 190:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(134);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("2935fa6d", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/_css-loader@0.28.9@css-loader/index.js?minimize=false!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-b4aecbc0\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/_postcss-loader@1.3.3@postcss-loader/index.js!../../../node_modules/_sass-loader@6.0.6@sass-loader/lib/loader.js!../../../node_modules/_vue-loader@11.3.4@vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -1503,7 +1503,7 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1526,7 +1526,7 @@ var index_proxy = exports.index_proxy = {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1561,18 +1561,18 @@ exports.default = plugin;
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(183)
+__webpack_require__(190)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(86),
+  __webpack_require__(88),
   /* template */
-  __webpack_require__(165),
+  __webpack_require__(171),
   /* scopeId */
   null,
   /* cssModules */
@@ -1600,7 +1600,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 86:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1614,7 +1614,7 @@ var _viewport = __webpack_require__(4);
 
 var _viewport2 = _interopRequireDefault(_viewport);
 
-var _calendar = __webpack_require__(142);
+var _calendar = __webpack_require__(147);
 
 var _calendar2 = _interopRequireDefault(_calendar);
 
@@ -1944,7 +1944,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 87:
+/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1954,7 +1954,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _calendar = __webpack_require__(108);
+var _calendar = __webpack_require__(111);
 
 var _calendar2 = _interopRequireDefault(_calendar);
 
@@ -2769,4 +2769,4 @@ exports.default = {
 
 /***/ })
 
-},[109]);
+},[112]);

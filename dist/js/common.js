@@ -34,7 +34,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		6: 0
+/******/ 		7: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -303,23 +303,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _lazyImage = __webpack_require__(139);
+var _scrollLoad = __webpack_require__(145);
 
-var _lazyImage2 = _interopRequireDefault(_lazyImage);
+var _scrollLoad2 = _interopRequireDefault(_scrollLoad);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_lazyImage2.default.install = function (Vue) {
-  return Vue.component('lazy-image', _lazyImage2.default);
+_scrollLoad2.default.install = function (Vue) {
+  return Vue.component('scroll-load', _scrollLoad2.default);
 }; /*******
     * 璩小孩
-    * 懒加载图片 20170817
+    * 滚动加载 20170817
     */
-exports.default = _lazyImage2.default;
+exports.default = _scrollLoad2.default;
 
 /***/ }),
 
-/***/ 102:
+/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -351,7 +351,7 @@ module.exports = function (parent, node) {
 
 /***/ }),
 
-/***/ 104:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -374,7 +374,7 @@ module.exports = function (node) {
 
 /***/ }),
 
-/***/ 105:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -398,7 +398,7 @@ module.exports = function (node, selector) {
 
 /***/ }),
 
-/***/ 106:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,26 +428,62 @@ module.exports = function (obj) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
-var _scrollLoad = __webpack_require__(140);
+var _axios = __webpack_require__(80);
 
-var _scrollLoad2 = _interopRequireDefault(_scrollLoad);
+var _axios2 = _interopRequireDefault(_axios);
+
+var _query = __webpack_require__(120);
+
+var _query2 = _interopRequireDefault(_query);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_scrollLoad2.default.install = function (Vue) {
-  return Vue.component('scroll-load', _scrollLoad2.default);
-}; /*******
-    * 璩小孩
-    * 滚动加载 20170817
-    */
-exports.default = _scrollLoad2.default;
+var instance = _axios2.default.create({
+    timeout: 20000,
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+});
+
+// code状态码200判断
+instance.interceptors.response.use(function (res) {
+    if (res.status === 654) {
+        // 百度云请求超时检测
+        console.log('请求超时！');
+        return Promise.reject({ type: -1, msg: "请求超时！", res: res });
+    }
+    if (res.data.code !== 0) {
+        console.log('数据返回有误');
+        return Promise.reject({ type: 0, msg: res.data.msg, res: res.data });
+    }
+    return res.data;
+}, function (error) {
+    console.log('promise error:' + error);
+    return Promise.reject({ type: -2, msg: "请求出错!", res: error });
+});
+
+//对POST请求数据做处理
+instance.interceptors.request.use(function (res) {
+    if (res.method === "post" && res.data) {
+        // let params = new URLSearchParams();
+        // Object.keys(res.data).forEach((key) => {
+        //     params.append(key, res.data[key]);
+        // });
+        // res.data = params;
+        res.data = _query2.default.stringify(res.data);
+    }
+    return res;
+});
+
+exports.default = instance;
 
 /***/ }),
 
-/***/ 114:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -525,396 +561,7 @@ module.exports = function (duration, progress, easing) {
 
 /***/ }),
 
-/***/ 116:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/**
- * 对对象和字符串处理
- * parse a=1&b=2 => {a:1, b: 2}
- * stringify {a:1, b: 2} => a=1&b=2
- * 璩 2017/09/15
- */
-exports.default = {
-    parse: function parse(qs, sep, eq, options) {
-        sep = sep || '&';
-        eq = eq || '=';
-        var obj = {};
-
-        if (typeof qs !== 'string' || qs.length === 0) {
-            return obj;
-        }
-
-        var regexp = /\+/g;
-        qs = qs.split(sep);
-
-        var maxKeys = 1000;
-        if (options && typeof options.maxKeys === 'number') {
-            maxKeys = options.maxKeys;
-        }
-
-        var len = qs.length;
-        // maxKeys <= 0 means that we should not limit keys count
-        if (maxKeys > 0 && len > maxKeys) {
-            len = maxKeys;
-        }
-
-        for (var i = 0; i < len; ++i) {
-            var x = qs[i].replace(regexp, '%20'),
-                idx = x.indexOf(eq),
-                kstr = void 0,
-                vstr = void 0,
-                k = void 0,
-                v = void 0;
-
-            if (idx >= 0) {
-                kstr = x.substr(0, idx);
-                vstr = x.substr(idx + 1);
-            } else {
-                kstr = x;
-                vstr = '';
-            }
-
-            k = decodeURIComponent(kstr);
-            v = decodeURIComponent(vstr);
-
-            if (!Object.prototype.hasOwnProperty.call(obj, k)) {
-                obj[k] = v;
-            } else if (Array.isArray(obj[k])) {
-                obj[k].push(v);
-            } else {
-                obj[k] = [obj[k], v];
-            }
-        }
-
-        return obj;
-    },
-    stringify: function stringify(obj, sep, eq, name) {
-        sep = sep || '&';
-        eq = eq || '=';
-        if (obj === null) {
-            obj = undefined;
-        }
-
-        var _stringifyPrimitive = function _stringifyPrimitive(v) {
-            switch (typeof v === 'undefined' ? 'undefined' : _typeof(v)) {
-                case 'string':
-                    return v;
-
-                case 'boolean':
-                    return v ? 'true' : 'false';
-
-                case 'number':
-                    return isFinite(v) ? v : '';
-
-                default:
-                    return '';
-            }
-        };
-
-        if ((typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object') {
-            return Object.keys(obj).map(function (k) {
-                var ks = encodeURIComponent(_stringifyPrimitive(k)) + eq;
-                if (Array.isArray(obj[k])) {
-                    return obj[k].map(function (v) {
-                        return ks + encodeURIComponent(_stringifyPrimitive(v));
-                    }).join(sep);
-                } else {
-                    return ks + encodeURIComponent(_stringifyPrimitive(obj[k]));
-                }
-            }).join(sep);
-        }
-
-        if (!name) return '';
-        return encodeURIComponent(_stringifyPrimitive(name)) + eq + encodeURIComponent(_stringifyPrimitive(obj));
-    },
-    url: function url(_url, obj) {
-        return _url + (_url.includes("?") ? "&" : "?") + (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === "object" ? this.stringify(obj) : obj;
-    }
-};
-
-/***/ }),
-
-/***/ 117:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _dataType = __webpack_require__(8);
-
-/**
- * Creates a debounced function that delays invoking `func` until after `wait`
- * milliseconds have elapsed since the last time the debounced function was
- * invoked. The debounced function comes with a `cancel` method to cancel
- * delayed `func` invocations and a `flush` method to immediately invoke them.
- * Provide `options` to indicate whether `func` should be invoked on the
- * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
- * with the last arguments provided to the debounced function. Subsequent
- * calls to the debounced function return the result of the last `func`
- * invocation.
- *
- * **Note:** If `leading` and `trailing` options are `true`, `func` is
- * invoked on the trailing edge of the timeout only if the debounced function
- * is invoked more than once during the `wait` timeout.
- *
- * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
- * until the next tick, similar to `setTimeout` with a timeout of `0`.
- *
- * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
- * for details over the differences between `debounce` and `throttle`.
- *
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to debounce.
- * @param {number} [wait=0] The number of milliseconds to delay.
- * @param {Object} [options={}] The options object.
- * @param {boolean} [options.leading=false]
- *  Specify invoking on the leading edge of the timeout.
- * @param {number} [options.maxWait]
- *  The maximum time `func` is allowed to be delayed before it's invoked.
- * @param {boolean} [options.trailing=true]
- *  Specify invoking on the trailing edge of the timeout.
- * @returns {Function} Returns the new debounced function.
- * @example
- *
- * // Avoid costly calculations while the window size is in flux.
- * jQuery(window).on('resize', debounce(calculateLayout, 150))
- *
- * // Invoke `sendMail` when clicked, debouncing subsequent calls.
- * jQuery(element).on('click', debounce(sendMail, 300, {
- *   'leading': true,
- *   'trailing': false
- * }))
- *
- * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
- * const debounced = debounce(batchLog, 250, { 'maxWait': 1000 })
- * const source = new EventSource('/stream')
- * jQuery(source).on('message', debounced)
- *
- * // Cancel the trailing debounced invocation.
- * jQuery(window).on('popstate', debounced.cancel)
- */
-function debounce(func, wait, options) {
-  var lastArgs = void 0,
-      lastThis = void 0,
-      maxWait = void 0,
-      result = void 0,
-      timerId = void 0,
-      lastCallTime = void 0;
-
-  var lastInvokeTime = 0;
-  var leading = false;
-  var maxing = false;
-  var trailing = true;
-
-  if (typeof func != 'function') {
-    throw new TypeError('Expected a function');
-  }
-  wait = +wait || 0;
-  if ((0, _dataType.isObject)(options)) {
-    leading = !!options.leading;
-    maxing = 'maxWait' in options;
-    maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : maxWait;
-    trailing = 'trailing' in options ? !!options.trailing : trailing;
-  }
-
-  function invokeFunc(time) {
-    var args = lastArgs;
-    var thisArg = lastThis;
-
-    lastArgs = lastThis = undefined;
-    lastInvokeTime = time;
-    result = func.apply(thisArg, args);
-    return result;
-  }
-
-  function leadingEdge(time) {
-    // Reset any `maxWait` timer.
-    lastInvokeTime = time;
-    // Start the timer for the trailing edge.
-    timerId = setTimeout(timerExpired, wait);
-    // Invoke the leading edge.
-    return leading ? invokeFunc(time) : result;
-  }
-
-  function remainingWait(time) {
-    var timeSinceLastCall = time - lastCallTime;
-    var timeSinceLastInvoke = time - lastInvokeTime;
-    var timeWaiting = wait - timeSinceLastCall;
-
-    return maxing ? Math.min(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
-  }
-
-  function shouldInvoke(time) {
-    var timeSinceLastCall = time - lastCallTime;
-    var timeSinceLastInvoke = time - lastInvokeTime;
-
-    // Either this is the first call, activity has stopped and we're at the
-    // trailing edge, the system time has gone backwards and we're treating
-    // it as the trailing edge, or we've hit the `maxWait` limit.
-    return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
-  }
-
-  function timerExpired() {
-    var time = Date.now();
-    if (shouldInvoke(time)) {
-      return trailingEdge(time);
-    }
-    // Restart the timer.
-    timerId = setTimeout(timerExpired, remainingWait(time));
-  }
-
-  function trailingEdge(time) {
-    timerId = undefined;
-
-    // Only invoke if we have `lastArgs` which means `func` has been
-    // debounced at least once.
-    if (trailing && lastArgs) {
-      return invokeFunc(time);
-    }
-    lastArgs = lastThis = undefined;
-    return result;
-  }
-
-  function cancel() {
-    if (timerId !== undefined) {
-      clearTimeout(timerId);
-    }
-    lastInvokeTime = 0;
-    lastArgs = lastCallTime = lastThis = timerId = undefined;
-  }
-
-  function flush() {
-    return timerId === undefined ? result : trailingEdge(Date.now());
-  }
-
-  function debounced() {
-    var time = Date.now();
-    var isInvoking = shouldInvoke(time);
-
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    lastArgs = args;
-    lastThis = this;
-    lastCallTime = time;
-
-    if (isInvoking) {
-      if (timerId === undefined) {
-        return leadingEdge(lastCallTime);
-      }
-      if (maxing) {
-        // Handle invocations in a tight loop.
-        timerId = setTimeout(timerExpired, wait);
-        return invokeFunc(lastCallTime);
-      }
-    }
-    if (timerId === undefined) {
-      timerId = setTimeout(timerExpired, wait);
-    }
-    return result;
-  }
-  debounced.cancel = cancel;
-  debounced.flush = flush;
-  return debounced;
-}
-
-exports.default = debounce;
-
-/***/ }),
-
 /***/ 12:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _axios = __webpack_require__(78);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _query = __webpack_require__(116);
-
-var _query2 = _interopRequireDefault(_query);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var instance = _axios2.default.create({
-    timeout: 20000,
-    headers: {
-        'X-Requested-With': 'XMLHttpRequest',
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
-});
-
-// code状态码200判断
-instance.interceptors.response.use(function (res) {
-    if (res.status === 654) {
-        // 百度云请求超时检测
-        console.log('请求超时！');
-        return Promise.reject({ type: -1, msg: "请求超时！", res: res });
-    }
-    if (res.data.code !== 0) {
-        console.log('数据返回有误');
-        return Promise.reject({ type: 0, msg: res.data.msg, res: res.data });
-    }
-    return res.data;
-}, function (error) {
-    console.log('promise error:' + error);
-    return Promise.reject({ type: -2, msg: "请求出错!", res: error });
-});
-
-//对POST请求数据做处理
-instance.interceptors.request.use(function (res) {
-    if (res.method === "post" && res.data) {
-        // let params = new URLSearchParams();
-        // Object.keys(res.data).forEach((key) => {
-        //     params.append(key, res.data[key]);
-        // });
-        // res.data = params;
-        res.data = _query2.default.stringify(res.data);
-    }
-    return res;
-});
-
-exports.default = instance;
-
-/***/ }),
-
-/***/ 120:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.m-scroll-loading[data-v-231fa66c] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  width: 2.66667rem;\n  height: 0.93333rem;\n  margin: 0 auto;\n}\n.m-scroll-loading .ani-loading .ani-1[data-v-231fa66c], .m-scroll-loading .ani-loading .ani-2[data-v-231fa66c], .m-scroll-loading .ani-loading .ani-3[data-v-231fa66c] {\n    width: 0.34667rem;\n    height: 0.34667rem;\n    border-radius: 100%;\n    margin: 0 0.34667rem;\n    -webkit-animation-name: aniScaleLoading;\n    animation-name: aniScaleLoading;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    -webkit-animation-duration: 1s;\n    animation-duration: 1s;\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n}\n.m-scroll-loading .ani-loading .ani-2[data-v-231fa66c] {\n    -webkit-animation-delay: 0.2s;\n    animation-delay: 0.2s;\n}\n.m-scroll-loading .ani-loading .ani-3[data-v-231fa66c] {\n    -webkit-animation-delay: 0.4s;\n    animation-delay: 0.4s;\n}\n.m-scroll-loading .text[data-v-231fa66c] {\n    text-align: center;\n    font-size: 0.32rem;\n}\n@-webkit-keyframes aniScaleLoading {\n0%, 50%, 100% {\n    -webkit-transform: scale(1);\n}\n25% {\n    -webkit-transform: scale(1.5);\n}\n}\n@keyframes aniScaleLoading {\n0%, 50%, 100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n25% {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5);\n}\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 13:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
@@ -1763,14 +1410,399 @@ var __WEBPACK_AMD_DEFINE_RESULT__;;(function () {
 
 /***/ }),
 
-/***/ 139:
+/***/ 120:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+ * 对对象和字符串处理
+ * parse a=1&b=2 => {a:1, b: 2}
+ * stringify {a:1, b: 2} => a=1&b=2
+ * 璩 2017/09/15
+ */
+exports.default = {
+    parse: function parse(qs, sep, eq, options) {
+        sep = sep || '&';
+        eq = eq || '=';
+        var obj = {};
+
+        if (typeof qs !== 'string' || qs.length === 0) {
+            return obj;
+        }
+
+        var regexp = /\+/g;
+        qs = qs.split(sep);
+
+        var maxKeys = 1000;
+        if (options && typeof options.maxKeys === 'number') {
+            maxKeys = options.maxKeys;
+        }
+
+        var len = qs.length;
+        // maxKeys <= 0 means that we should not limit keys count
+        if (maxKeys > 0 && len > maxKeys) {
+            len = maxKeys;
+        }
+
+        for (var i = 0; i < len; ++i) {
+            var x = qs[i].replace(regexp, '%20'),
+                idx = x.indexOf(eq),
+                kstr = void 0,
+                vstr = void 0,
+                k = void 0,
+                v = void 0;
+
+            if (idx >= 0) {
+                kstr = x.substr(0, idx);
+                vstr = x.substr(idx + 1);
+            } else {
+                kstr = x;
+                vstr = '';
+            }
+
+            k = decodeURIComponent(kstr);
+            v = decodeURIComponent(vstr);
+
+            if (!Object.prototype.hasOwnProperty.call(obj, k)) {
+                obj[k] = v;
+            } else if (Array.isArray(obj[k])) {
+                obj[k].push(v);
+            } else {
+                obj[k] = [obj[k], v];
+            }
+        }
+
+        return obj;
+    },
+    stringify: function stringify(obj, sep, eq, name) {
+        sep = sep || '&';
+        eq = eq || '=';
+        if (obj === null) {
+            obj = undefined;
+        }
+
+        var _stringifyPrimitive = function _stringifyPrimitive(v) {
+            switch (typeof v === 'undefined' ? 'undefined' : _typeof(v)) {
+                case 'string':
+                    return v;
+
+                case 'boolean':
+                    return v ? 'true' : 'false';
+
+                case 'number':
+                    return isFinite(v) ? v : '';
+
+                default:
+                    return '';
+            }
+        };
+
+        if ((typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object') {
+            return Object.keys(obj).map(function (k) {
+                var ks = encodeURIComponent(_stringifyPrimitive(k)) + eq;
+                if (Array.isArray(obj[k])) {
+                    return obj[k].map(function (v) {
+                        return ks + encodeURIComponent(_stringifyPrimitive(v));
+                    }).join(sep);
+                } else {
+                    return ks + encodeURIComponent(_stringifyPrimitive(obj[k]));
+                }
+            }).join(sep);
+        }
+
+        if (!name) return '';
+        return encodeURIComponent(_stringifyPrimitive(name)) + eq + encodeURIComponent(_stringifyPrimitive(obj));
+    },
+    url: function url(_url, obj) {
+        return _url + (_url.includes("?") ? "&" : "?") + (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === "object" ? this.stringify(obj) : obj;
+    }
+};
+
+/***/ }),
+
+/***/ 121:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _dataType = __webpack_require__(13);
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `debounce` and `throttle`.
+ *
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', debounce(calculateLayout, 150))
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }))
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * const debounced = debounce(batchLog, 250, { 'maxWait': 1000 })
+ * const source = new EventSource('/stream')
+ * jQuery(source).on('message', debounced)
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel)
+ */
+function debounce(func, wait, options) {
+  var lastArgs = void 0,
+      lastThis = void 0,
+      maxWait = void 0,
+      result = void 0,
+      timerId = void 0,
+      lastCallTime = void 0;
+
+  var lastInvokeTime = 0;
+  var leading = false;
+  var maxing = false;
+  var trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError('Expected a function');
+  }
+  wait = +wait || 0;
+  if ((0, _dataType.isObject)(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs;
+    var thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime;
+    var timeSinceLastInvoke = time - lastInvokeTime;
+    var timeWaiting = wait - timeSinceLastCall;
+
+    return maxing ? Math.min(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime;
+    var timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return lastCallTime === undefined || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+  }
+
+  function timerExpired() {
+    var time = Date.now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(Date.now());
+  }
+
+  function debounced() {
+    var time = Date.now();
+    var isInvoking = shouldInvoke(time);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    lastArgs = args;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+exports.default = debounce;
+
+/***/ }),
+
+/***/ 124:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.m-scroll-loading[data-v-231fa66c] {\n  display: -webkit-flex;\n  display: -webkit-box;\n  display: flex;\n  -webkit-flex-wrap: wrap;\n  flex-wrap: wrap;\n  -webkit-align-content: space-between;\n  align-content: space-between;\n  -webkit-justify-content: center;\n  -webkit-box-pack: center;\n          justify-content: center;\n  width: 2.66667rem;\n  height: 0.93333rem;\n  margin: 0 auto;\n}\n.m-scroll-loading .ani-loading .ani-1[data-v-231fa66c], .m-scroll-loading .ani-loading .ani-2[data-v-231fa66c], .m-scroll-loading .ani-loading .ani-3[data-v-231fa66c] {\n    width: 0.34667rem;\n    height: 0.34667rem;\n    border-radius: 100%;\n    margin: 0 0.34667rem;\n    -webkit-animation-name: aniScaleLoading;\n    animation-name: aniScaleLoading;\n    -webkit-animation-iteration-count: infinite;\n    animation-iteration-count: infinite;\n    -webkit-animation-duration: 1s;\n    animation-duration: 1s;\n    -webkit-animation-timing-function: linear;\n    animation-timing-function: linear;\n}\n.m-scroll-loading .ani-loading .ani-2[data-v-231fa66c] {\n    -webkit-animation-delay: 0.2s;\n    animation-delay: 0.2s;\n}\n.m-scroll-loading .ani-loading .ani-3[data-v-231fa66c] {\n    -webkit-animation-delay: 0.4s;\n    animation-delay: 0.4s;\n}\n.m-scroll-loading .text[data-v-231fa66c] {\n    text-align: center;\n    font-size: 0.32rem;\n}\n@-webkit-keyframes aniScaleLoading {\n0%, 50%, 100% {\n    -webkit-transform: scale(1);\n}\n25% {\n    -webkit-transform: scale(1.5);\n}\n}\n@keyframes aniScaleLoading {\n0%, 50%, 100% {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n25% {\n    -webkit-transform: scale(1.5);\n            transform: scale(1.5);\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isElement = exports.isNode = exports.isUndefined = exports.isNull = exports.isFunction = exports.isBoolean = exports.isObject = exports.isArray = exports.isString = exports.isNumber = undefined;
+
+var _getType = __webpack_require__(109);
+
+var _getType2 = _interopRequireDefault(_getType);
+
+var _isNode = __webpack_require__(107);
+
+var _isNode2 = _interopRequireDefault(_isNode);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***********
+ * 数据类型
+ * @type {obj}
+ */
+var isNumber = exports.isNumber = function isNumber(obj) {
+  return (0, _getType2.default)(obj) === "number";
+};
+var isString = exports.isString = function isString(obj) {
+  return (0, _getType2.default)(obj) === "string";
+};
+var isArray = exports.isArray = function isArray(obj) {
+  return (0, _getType2.default)(obj) === "array";
+};
+var isObject = exports.isObject = function isObject(obj) {
+  return (0, _getType2.default)(obj) === "object";
+};
+var isBoolean = exports.isBoolean = function isBoolean(obj) {
+  return (0, _getType2.default)(obj) === "boolean";
+};
+var isFunction = exports.isFunction = function isFunction(obj) {
+  return (0, _getType2.default)(obj) === "function";
+};
+var isNull = exports.isNull = function isNull(obj) {
+  return (0, _getType2.default)(obj) === "null";
+};
+var isUndefined = exports.isUndefined = function isUndefined(obj) {
+  return (0, _getType2.default)(obj) === "undefined";
+};
+var isNode = exports.isNode = function isNode(node) {
+  return (0, _isNode2.default)(node);
+};
+var isElement = exports.isElement = function isElement(element) {
+  return isNode(element) && element.nodeType === 1;
+};
+
+/***/ }),
+
+/***/ 144:
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(82),
+  __webpack_require__(84),
   /* template */
-  __webpack_require__(157),
+  __webpack_require__(162),
   /* scopeId */
   null,
   /* cssModules */
@@ -1798,18 +1830,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 140:
+/***/ 145:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(174)
+__webpack_require__(180)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(83),
+  __webpack_require__(85),
   /* template */
-  __webpack_require__(152),
+  __webpack_require__(157),
   /* scopeId */
   "data-v-231fa66c",
   /* cssModules */
@@ -1837,7 +1869,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 152:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1873,7 +1905,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 157:
+/***/ 162:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1893,13 +1925,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 174:
+/***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(120);
+var content = __webpack_require__(124);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1920,7 +1952,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 190:
+/***/ 197:
 /***/ (function(module, exports) {
 
 /**
@@ -1973,7 +2005,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(190)
+var listToStyles = __webpack_require__(197)
 
 /*
 type StyleObject = {
@@ -2182,8 +2214,8 @@ function applyToTag (styleElement, obj) {
 "use strict";
 
 
-var matches = __webpack_require__(105);
-var contains = __webpack_require__(102);
+var matches = __webpack_require__(108);
+var contains = __webpack_require__(105);
 
 module.exports = function (node, selector, box) {
     var result = null;
@@ -2391,7 +2423,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ 5:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2453,7 +2485,82 @@ var lock = exports.lock = function lock() {
 
 /***/ }),
 
-/***/ 78:
+/***/ 8:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(3);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _bus = __webpack_require__(7);
+
+var _closest = __webpack_require__(25);
+
+var _closest2 = _interopRequireDefault(_closest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _vHrefList = { bind: true };
+
+
+function _bodyClickJump(ev) {
+    var key = ev.target.dataset.vkey;
+    var query = ev.target.dataset.query;
+    if (!key) {
+        var node = (0, _closest2.default)(ev.target, "[data-vkey]");
+        if (node) {
+            key = node.dataset.vkey;
+            query = node.dataset.query;
+        }
+    }
+    var obj = _vHrefList[key];
+    if (obj) {
+        var openURL = function openURL() {
+            var url = query ? value.includes("?") ? value + "&" + query : value + "?" + query : value;
+            if (arg === "top") {
+                window.top.location.href = url;
+            } else {
+                location.href = url;
+            }
+        };
+
+        var value = obj.value;
+        var arg = obj.arg;
+        var lazy = obj.lazy;
+
+        document.body.removeEventListener("click", _bodyClickJump, false);
+        _vHrefList.bind = false;
+        if (lazy) {
+            setTimeout(openURL, 20);
+        } else {
+            openURL();
+        }
+    }
+}
+
+document.body.addEventListener("click", _bodyClickJump, false);
+window.addEventListener('pageshow', function (e) {
+    if (e.persisted && !_vHrefList.bind) {
+        document.body.addEventListener("click", _bodyClickJump, false);
+    }
+}, false);
+
+_vue2.default.directive('href', {
+    bind: function bind(el, binding) {
+        var value = binding.value;
+        if (typeof value !== "string" || value === "") return;
+        var arg = binding.arg;
+        el.dataset.vkey = (0, _bus.getUniqueId)();
+        _vHrefList[el.dataset.vkey] = { arg: arg, value: value, lazy: binding.modifiers.lazy };
+    }
+});
+
+/***/ }),
+
+/***/ 80:
 /***/ (function(module, exports) {
 
 /* axios v0.16.2 | (c) 2017 by Matt Zabriskie */
@@ -2468,65 +2575,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},function(e,t
 
 /***/ }),
 
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isElement = exports.isNode = exports.isUndefined = exports.isNull = exports.isFunction = exports.isBoolean = exports.isObject = exports.isArray = exports.isString = exports.isNumber = undefined;
-
-var _getType = __webpack_require__(106);
-
-var _getType2 = _interopRequireDefault(_getType);
-
-var _isNode = __webpack_require__(104);
-
-var _isNode2 = _interopRequireDefault(_isNode);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***********
- * 数据类型
- * @type {obj}
- */
-var isNumber = exports.isNumber = function isNumber(obj) {
-  return (0, _getType2.default)(obj) === "number";
-};
-var isString = exports.isString = function isString(obj) {
-  return (0, _getType2.default)(obj) === "string";
-};
-var isArray = exports.isArray = function isArray(obj) {
-  return (0, _getType2.default)(obj) === "array";
-};
-var isObject = exports.isObject = function isObject(obj) {
-  return (0, _getType2.default)(obj) === "object";
-};
-var isBoolean = exports.isBoolean = function isBoolean(obj) {
-  return (0, _getType2.default)(obj) === "boolean";
-};
-var isFunction = exports.isFunction = function isFunction(obj) {
-  return (0, _getType2.default)(obj) === "function";
-};
-var isNull = exports.isNull = function isNull(obj) {
-  return (0, _getType2.default)(obj) === "null";
-};
-var isUndefined = exports.isUndefined = function isUndefined(obj) {
-  return (0, _getType2.default)(obj) === "undefined";
-};
-var isNode = exports.isNode = function isNode(node) {
-  return (0, _isNode2.default)(node);
-};
-var isElement = exports.isElement = function isElement(element) {
-  return isNode(element) && element.nodeType === 1;
-};
-
-/***/ }),
-
-/***/ 82:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2623,7 +2672,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 83:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2637,11 +2686,11 @@ var _viewport = __webpack_require__(4);
 
 var _viewport2 = _interopRequireDefault(_viewport);
 
-var _animate = __webpack_require__(114);
+var _animate = __webpack_require__(118);
 
 var _animate2 = _interopRequireDefault(_animate);
 
-var _debounce = __webpack_require__(117);
+var _debounce = __webpack_require__(121);
 
 var _debounce2 = _interopRequireDefault(_debounce);
 
@@ -2733,72 +2782,23 @@ exports.default = {
 "use strict";
 
 
-var _vue = __webpack_require__(3);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _vue2 = _interopRequireDefault(_vue);
+var _lazyImage = __webpack_require__(144);
 
-var _bus = __webpack_require__(5);
-
-var _closest = __webpack_require__(25);
-
-var _closest2 = _interopRequireDefault(_closest);
+var _lazyImage2 = _interopRequireDefault(_lazyImage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _vHrefList = { bind: true };
-
-
-function _bodyClickJump(ev) {
-    var key = ev.target.dataset.vkey;
-    var query = ev.target.dataset.query;
-    if (!key) {
-        var node = (0, _closest2.default)(ev.target, "[data-vkey]");
-        if (node) {
-            key = node.dataset.vkey;
-            query = node.dataset.query;
-        }
-    }
-    var obj = _vHrefList[key];
-    if (obj) {
-        var openURL = function openURL() {
-            var url = query ? value.includes("?") ? value + "&" + query : value + "?" + query : value;
-            if (arg === "top") {
-                window.top.location.href = url;
-            } else {
-                location.href = url;
-            }
-        };
-
-        var value = obj.value;
-        var arg = obj.arg;
-        var lazy = obj.lazy;
-
-        document.body.removeEventListener("click", _bodyClickJump, false);
-        _vHrefList.bind = false;
-        if (lazy) {
-            setTimeout(openURL, 20);
-        } else {
-            openURL();
-        }
-    }
-}
-
-document.body.addEventListener("click", _bodyClickJump, false);
-window.addEventListener('pageshow', function (e) {
-    if (e.persisted && !_vHrefList.bind) {
-        document.body.addEventListener("click", _bodyClickJump, false);
-    }
-}, false);
-
-_vue2.default.directive('href', {
-    bind: function bind(el, binding) {
-        var value = binding.value;
-        if (typeof value !== "string" || value === "") return;
-        var arg = binding.arg;
-        el.dataset.vkey = (0, _bus.getUniqueId)();
-        _vHrefList[el.dataset.vkey] = { arg: arg, value: value, lazy: binding.modifiers.lazy };
-    }
-});
+_lazyImage2.default.install = function (Vue) {
+  return Vue.component('lazy-image', _lazyImage2.default);
+}; /*******
+    * 璩小孩
+    * 懒加载图片 20170817
+    */
+exports.default = _lazyImage2.default;
 
 /***/ })
 
