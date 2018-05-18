@@ -19,7 +19,6 @@ glob.sync(`${root}/src/views/**/main.js`).forEach(file => {
     entries[index] = file;
     chunks.push(index);
     // 为每个main.js生成一个对应的html文件
-    //console.log(index);
     htmlWebpackPlugins.push(new HtmlWebpackPlugin({
         "template": `${root}/src/views/${index}/index.html`, // 模板名
         "filename": `${index}.html`, // 生成的文件名
@@ -57,41 +56,48 @@ const plugins = [
 if (isProduction) {
     console.log("-----------------正在使用生产模式构建工程------------------");
 
-    plugins.push(new BabiliWebpackPlugin({ // 压缩
-        "presets": [
-            ["babili", {
+    plugins.push(new BabiliWebpackPlugin({"presets": [
+            ["minify", {
                 "removeConsole": true,
                 "removeDebugger": true
             }]
-        ]
-    }));
+        ]}, {
+            "comments": false,
+        })
+    );
+
 } else if (process.env.NODE_ENV == "dev") {
     plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 const dist = path.resolve(root, "./dist");
+
 module.exports = {
     "entry": entries,
     "output": {
         "path": dist,
-        "publicPath": "./",
+        "publicPath": isProduction ? "./" : "/", //"publicPath": "./",
         "filename": `js/[name].js${isProduction ? '?v=[chunkhash]' : ''}`,
         "chunkFilename": `js/[id].js${isProduction ? '?v=[chunkhash]' : ''}`
     },
     "devServer": {
         contentBase: dist,
         inline: true,
-        host: 'localhost',
-        port: 8080,
+        host: '172.22.24.63',
+        port: 8087,
         hot: true,
-        open: true,
-        proxy: proxyOpts
+        open: false,
+        proxy: proxyOpts,
+        watchContentBase: false,
+        watchOptions: {
+            poll: true
+        }
     },
     "resolve": {
         "extensions": [".js", ".vue"],
         "alias": Object.assign({
             "vue$": "vue/dist/vue.min.js",
-            "mockjs$": "mockjs/dist/mock-min.js",
+            // "mockjs$": "mockjs/dist/mock-min.js",
             "axios$": "axios/dist/axios.min.js",
             "babel-polyfill$": "babel-polyfill/dist/polyfill.min.js",
             "comp": `${root}/src/comp`,
@@ -138,17 +144,17 @@ module.exports = {
             //     exclude: /node_modules/
             // },
             {
-                test: /\.(css)$/,
-                loader: ExtractTextPlugin.extract({
+                'test': /\.(css)$/,
+                'loader': ExtractTextPlugin.extract({
                     "fallback": "style-loader",
                     "use": `css-loader?minimize=${isProduction}`
                 }),
+                "exclude":  [/swiper/,/node_modules/] //路劲问题保持
             },
             {
                 "test": /\.json$/,
                 "loader": "json-loader"
             },
-
             {
                 "test": /\.(jpe?g|png|gif|svg)$/,
                 "loader": "url-loader",
@@ -157,7 +163,6 @@ module.exports = {
                     "name": "images/[name]-[hash:8].[ext]"
                 }
             }
-
         ],
         // 不对某些文件解析依赖
         "noParse": [/vue\.min\.js$/, /mockjs\/dist\/mock-min\.js$/, /axios\.min\.js$/, /polyfill\.min\.js$/]

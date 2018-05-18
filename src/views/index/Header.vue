@@ -1,8 +1,8 @@
 <template>
-    <swiper :options="swiperOption" ref="swiper" v-if="images.length > 0">
+<!--     <swiper :options="swiperOption" ref="swiper" v-if="images.length > 0">
         <swiper-slide v-for="(item, index) in images" :key="index"><lazy-image v-href="item.url" :src="item.img" init-src="/images/common/750x312.jpg"/></swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+    </swiper> -->
 </template>
 <script>
     import { swiper, swiperSlide } from 'common/plugin/swiper'
@@ -22,8 +22,8 @@
             }
         },
         components: {
-            swiper,
-            swiperSlide
+            // swiper,
+            // swiperSlide
         }
     }
 </script>
