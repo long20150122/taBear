@@ -14,61 +14,6 @@
             <li class="item vh-center hide"><span>票房榜</span><i class="arrow-right"></i></li>
         </ul>
         <div class="top-grossing-movie" v-if="films.length > 0">
-            <!--<div class="movie-title vh-center hide">-->
-                <!--<span class="line"></span><span class="name">票房冠军</span><span class="line"></span>-->
-            <!--</div>-->
-            <!--<div class="movie-info hide">-->
-                <!--<div class="filter-blur">-->
-                    <!--<lazy-image src="/images/common/img2.png"/>-->
-                    <!--<div class="overlay"></div>-->
-                <!--</div>-->
-                <!--<div class="notice-image">-->
-                    <!--<lazy-image src="/images/common/img2.png"/>-->
-                <!--</div>-->
-                <!--<div class="info">-->
-                    <!--<div class="name"><span class="text">悟空传</span><span class="score">7.8</span></div>-->
-                    <!--<div class="type">120分、奇幻/动作/剧情、3D IMAX</div>-->
-                    <!--<div class="desc">难道命运真的早已注定?悟空不服,啦啦啦.</div>-->
-                    <!--<div class="give-like vh-center" @click="toggle($event, 'top')">-->
-                        <!--<i data-type="dislike" :class="likes.dislike_top ? 'icon-dislike-selected' : 'icon-dislike'"></i>-->
-                        <!--<span class="line"></span>-->
-                        <!--<i data-type="like" :class="likes.like_top ? 'icon-like-selected' : 'icon-like'"></i>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<ul class="photos vh-left">-->
-                    <!--<li class="photo"><lazy-image src="/images/common/img2.png" init-src="/images/common/152x152.jpg"/></li>-->
-                    <!--<li class="photo"><lazy-image src="/images/common/img2.png" init-src="/images/common/152x152.jpg"/></li>-->
-                    <!--<li class="photo"><lazy-image src="/images/common/img2.png" init-src="/images/common/152x152.jpg"/></li>-->
-                    <!--<li class="photo"><lazy-image src="/images/common/img2.png" init-src="/images/common/152x152.jpg"/></li>-->
-                    <!--<li class="photo"><lazy-image src="/images/common/img2.png" init-src="/images/common/152x152.jpg"/></li>-->
-                    <!--<li class="more"><i class="icon-more"></i></li>-->
-                <!--</ul>-->
-                <!--<div class="activity">-->
-                    <!--<span class="icon vh-center">活动</span>-->
-                    <!--<span class="text">9.9元看悟空传</span>-->
-                <!--</div>-->
-                <!--<div class="video-signal">-->
-                    <!--<span class="icon vh-center">影讯</span>-->
-                    <!--<span class="text">“悟空传"悲情正片片段曝光</span>-->
-                <!--</div>-->
-                <!--<div class="btn-group vh-center">-->
-                    <!--<span class="btn vh-center" @click="openDialog">-->
-                        <!--<span class="name">购票</span>-->
-                        <!--<span class="sub">9.9元起</span>-->
-                    <!--</span>-->
-                <!--</div>-->
-                <!--<div class="movie-good vh-left">-->
-                    <!--<div class="image">-->
-                        <!--<img src="/images/common/img2.png"/>-->
-                    <!--</div>-->
-                    <!--<div class="msg">-->
-                        <!--<div class="name">双人套餐B9</div>-->
-                        <!--<div class="desc">160z 现调饮料2杯+460z 爆米花…</div>-->
-                        <!--<div class="price"><span class="sub">¥</span><span>24</span></div>-->
-                    <!--</div>-->
-                    <!--<span class="btn vh-center">去选购</span>-->
-                <!--</div>-->
-            <!--</div>-->
             <div class="movie-title vh-center"><span class="line"></span><span class="name">今日推荐影片</span><span class="line"></span></div>
             <div class="movie-info movie-item" v-for="(item, index) in films">
                 <div class="filter-blur" v-href="options.href.urlFilm" :data-query="'film_code='+item.code">

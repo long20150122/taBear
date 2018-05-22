@@ -1,7 +1,7 @@
 <template>
     <div class="m-count m-views-index">
         <ul class="m-index-tab fixed-top" v-if="show">
-            <li class="item selected">正在热映</li>
+            <li class="item selected" v-href="location">正在热映</li>
             <li class="item" v-href="options.href.urlNew">即将上映</li>
             <li class="item vh-center hide"><span>票房榜<!-- testabc --></span><i class="arrow-right"></i></li>
         </ul>
@@ -9,7 +9,6 @@
             <app-header :images="options.bannerImage"></app-header>
             <app-content :options="options"></app-content>
         </div>
-        <!-- 我就是测试一下 -->
         <app-nav-items v-if="options.bottomNavItems">
             <app-item icon="home" selected="true" name="推荐"></app-item>
             <app-item icon="find" :href="options.bottomNavItems[1]" name="发现"></app-item>
@@ -34,7 +33,8 @@ export default {
         return {
             image: this.options.bannerImage && this.options.bannerImage.length > 0,
             show: false,
-            height: 312
+            height: 312,
+            location: 'http://www.baidu.com'
         }
     },
     created() {
