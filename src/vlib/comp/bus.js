@@ -1,7 +1,7 @@
 /***********
  * 基于vue通讯模块
  * @type {number}
- * 璩小孩 20170807
+ * ft 20170807
  */
 import Vue from 'vue';
 
