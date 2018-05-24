@@ -186,3 +186,11 @@ export function getQueryString(name) {
         return unescape(r[2]);
     return null;
 }
+
+/*日历函数*/
+export function calenderDate() {
+
+    return {
+        
+    }
+}

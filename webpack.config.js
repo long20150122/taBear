@@ -76,7 +76,7 @@ module.exports = {
     "entry": entries,
     "output": {
         "path": dist,
-        "publicPath": isProduction ? "./" : "/", //"publicPath": "./",
+        "publicPath": isProduction ? "./" : "/",//"./", 
         "filename": `js/[name].js${isProduction ? '?v=[chunkhash]' : ''}`,
         "chunkFilename": `js/[id].js${isProduction ? '?v=[chunkhash]' : ''}`
     },
@@ -149,7 +149,7 @@ module.exports = {
                     "fallback": "style-loader",
                     "use": `css-loader?minimize=${isProduction}`
                 }),
-                "exclude":  [/swiper/,/node_modules/] //路劲问题保持
+                "exclude":  [/swiper/,/node_modules/] //build 注释掉  不知道为什么
             },
             {
                 "test": /\.json$/,

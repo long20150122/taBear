@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.16.0",
     "babel-polyfill": "^6.23.0",
+    "better-scroll": "^1.11.1",
     "fastclick": "^1.0.6",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.2.6",
