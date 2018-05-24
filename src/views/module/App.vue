@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-    @import '../../common/style/reset.scss';
-   @import '../../common/style/mixin';
+    // @import '../../common/style/reset.scss';
+    // @import '../../common/style/mixin';
+    @import '../../common/style/common.scss';
 </style>
