@@ -1789,3 +1789,9 @@ $flexMid: true !default; //用于ie10 -ms前缀
     @include justify-content;
     @include align-items(center);
 }
+
+@mixin active() {
+    &:active {
+        background-color: #ff9000 !important;
+    }
+}
