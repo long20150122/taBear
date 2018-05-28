@@ -113,7 +113,7 @@ export default {
     mounted () {},
     methods: {
         goCustom() {
-            location.href = '/calander.html';
+            location.href = '/counter.html';//'/calander.html';
         }
     }
 }
