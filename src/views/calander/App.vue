@@ -29,6 +29,7 @@ export default {
             img: 'http://img17.3lian.com/d/file/201703/06/ea0b5efc8ab75167dd7655bcc16defca.jpg'
         }
     },
+    created () {},
     mounted () {},
     methods: {}
 }

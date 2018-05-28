@@ -50,7 +50,25 @@ const plugins = [
         name: "common", // 公共模块的名称
         chunks: chunks, // chunks是需要提取的模块
         minChunks: chunks.length
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        compress:{
+            warnings: false,
+            drop_debugger: true,
+            drop_console: true
+        }
+    }),
+    // new UglifyJsPlugin({
+    //     uglifyOptions: {
+    //         compress: {
+    //             warnings: false,
+    //             drop_debugger: true,
+    //             drop_console: true
+    //         }
+    //     },
+    //     sourceMap: config.build.productionSourceMap,
+    //     parallel: true
+    // }),
 ];
 
 if (isProduction) {
