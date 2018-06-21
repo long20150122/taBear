@@ -1,5 +1,5 @@
 /**
- * 璩小孩
+ * ft
  * 循环动画
  */
 module.exports = function(duration, progress, easing) {
