@@ -184,10 +184,8 @@ export default {
           		}
           		if (e.y < -this.tapTop) {
           			this.showTap = 1;
-          			console.log(e.y);
           		} else {
           			this.showTap = 0;
-          			console.log(e.y);
           		}
           	})
         }
