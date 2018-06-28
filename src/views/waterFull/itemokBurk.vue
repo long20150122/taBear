@@ -1,34 +1,11 @@
 <template>
 	<div>
-		<div class="search-wrapper" :class="[showSearch ? 'show-search' : '']" v-show="showSearch">这是搜索框</div>
-		<div class="toptap-wrapper" :class="[showTap ? 'show-tap' : '']" v-show="showTap">            
-			<div class="title-wrapper">
-                <p class="active-tap">推荐</p>
-                <p>附近</p>
-                <p>海上餐厅</p>
-                <p>潜水</p>
-                <p>赶海</p>
-            </div>
-        </div>
+		<div class="body-wrapper">
+			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		</div>
 		<div class="wrapper" ref="wrapper">
 			<div class="md-wrapper">
-				<!-- <div class="body-wrapper">
-					aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-				</div> -->
 				<div class="middle-wrapper">
-					<div class="body-wrapper">
-						<div class="insearch-wrapper">这是搜索框</div>
-						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-						<div class="intoptap-wrapper">            
-							<div class="title-wrapper">
-				                <p class="active-tap">推荐</p>
-				                <p>附近</p>
-				                <p>海上餐厅</p>
-				                <p>潜水</p>
-				                <p>赶海</p>
-				            </div>
-				        </div>
-					</div>
 					<div class="box" v-for="item in urlData">
 						<div class="pic">
 							<img :src="item.imgurl" alt="">
@@ -133,10 +110,6 @@ export default {
 			loaderText: '加载更多',
 			longs: 0,
 			deviceRid: 2.4,
-			showSearch: 0,
-			showTap: 0,
-			searchTop: 10,//search框的高度
-			tapTop: 1020-100-80,//（*）外出div高度减去分类框高度
 		}
 	},
 	components: {
@@ -147,7 +120,7 @@ export default {
 	},
 	mounted() {
 		let vm = this;
-		this._initWaterFull(1);
+		this._initWaterFull();
 		this.scroll = new BScroll(this.$refs.wrapper, {
 		    // pullUpLoad: this.pullup,
 		    pullUpLoad: {
@@ -176,31 +149,17 @@ export default {
 					})
 				}, 800)
           	})
-          	this.scroll.on('scroll', (e) => {
-          		if (e.y < -this.searchTop) {
-          			this.showSearch = 1;
-          		} else {
-          			this.showSearch = 0;
-          		}
-          		if (e.y < -this.tapTop) {
-          			this.showTap = 1;
-          			console.log(e.y);
-          		} else {
-          			this.showTap = 0;
-          			console.log(e.y);
-          		}
-          	})
         }
 		
 
 
 	},
 	methods: {
-		_initWaterFull (val) {
+		_initWaterFull () {
 			let vm = this;
 			let $wrapper = document.querySelectorAll(".wrapper");
 			let boxArr = $wrapper[0].querySelectorAll(".box");
-			this.calRio(boxArr[0], val);
+			this.calRio(boxArr[0]);
 			let oldLong = this.longs;
 			this.longs = boxArr.length; 
 			// this.colArr = [];
@@ -258,19 +217,9 @@ export default {
 			}
 			this.setHeight();
 		},
-		calRio (ele, val) {
-			if (val == 1) {//这里只是初始化一些变量，只需执行一次
-				let elepic = ele.querySelectorAll(".pic")[0];
-				this.deviceRid = 60/(ele.offsetHeight - elepic.offsetHeight);
-
-				//初始化顶部搜索和底部搜索
-				this.searchTop = this.searchTop/this.deviceRid;
-				this.tapTop = this.tapTop/this.deviceRid;
-
-				const $ele = document.querySelectorAll('.body-wrapper');
-				let H = $ele[0].offsetHeight;
-				this.colArr = [H,H]; //this.colArr = [300/this.deviceRid, 300/this.deviceRid];//少节点读取但是 每次需要注意300的修改
-			}
+		calRio (ele) {
+			let elepic = ele.querySelectorAll(".pic")[0];
+			this.deviceRid = 60/(ele.offsetHeight - elepic.offsetHeight);
 		},
 		calHW (val) {
 			//.box padding 30, .pic padding 30, .title height 40, .name height 40
@@ -305,128 +254,18 @@ export default {
 		padding: 0;
 		margin: 0;
 	}
-	html,body {
-		background-color: #fff;
-	}
-	.search-wrapper {
-		position: absolute;
-		top: 0;
-		width: r(750);
-		height: r(100);
-		z-index: -99;
-		line-height: r(100);
-		text-align: center;
-		font-size: r(30);
-		background-color: pink;
-	}
-	.show-search {
-		z-index: 99 !important;
-	}
-	.show-tap {
-		z-index: 99 !important;
-	}
-	.toptap-wrapper {
-		position: absolute;
-		top: r(100);
-		width: r(750);
-		height: r(100);
-		background-color: yellow;
-		z-index: -99;
-		.title-wrapper {
-		    height: r(110);
-		    width: 100%;
-		    font-size: r(30);
-		    color: #123456;
-		    @include display-flex();
-		    @include justify-content(center);
-		    @include align-items(center);
-		    p {
-		        @include flex(1);
-		        text-align: center;
-		    }
-		    .active-tap {
-		        position: relative;
-		        font-size: r(36) !important;
-		        font-weight: bold;
-		    }
-		    .active-tap:after {
-		        content: '';
-		        width: r(80);
-		        height: r(8);
-		        position: absolute;
-		        bottom: r(-10);
-		        left: 50%;
-		        margin-left: r(-40);
-		        @include gradient-horizontal(#FFC300, #FF9000);
-		        border-radius: r(4);
-		    }
-		}
-	}
 	.body-wrapper {
-		height: r(1020);
+		height: r(300);
 		width: 100%;
 		background-color: #123456;
-		position: relative;
-		.insearch-wrapper {
-			// position: absolute;
-			position: relative;;
-			top: 0;
-			width: r(750);
-			height: r(100);
-			z-index: 90;
-			line-height: r(100);
-			text-align: center;
-			font-size: r(30);
-			background-color: pink;
-		}
-		.intoptap-wrapper {
-			// position: absolute;
-			// top: r(100);
-			position: absolute;
-			bottom: 0;
-			width: r(750);
-			height: r(100);
-			background-color: yellow;
-			z-index: 90;
-			.title-wrapper {
-			    height: r(110);
-			    width: 100%;
-			    font-size: r(30);
-			    color: #123456;
-			    @include display-flex();
-			    @include justify-content(center);
-			    @include align-items(center);
-			    p {
-			        @include flex(1);
-			        text-align: center;
-			    }
-			    .active-tap {
-			        position: relative;
-			        font-size: r(36) !important;
-			        font-weight: bold;
-			    }
-			    .active-tap:after {
-			        content: '';
-			        width: r(80);
-			        height: r(8);
-			        position: absolute;
-			        bottom: r(-10);
-			        left: 50%;
-			        margin-left: r(-40);
-			        @include gradient-horizontal(#FFC300, #FF9000);
-			        border-radius: r(4);
-			    }
-			}
-		}
 	}
 	.wrapper {
 		position: fixed;
 		width: r(750);
 		margin: 0 auto;
-		top: r(0);
+		top: r(300);
 		bottom: 0;
 		overflow: hidden;
-		background-color: #fff;
 	}
 	.md-wrapper {
 		width: 100%;
@@ -437,7 +276,6 @@ export default {
 	}
 	.middle-wrapper {
 		width: 100%;
-		background-color: #fff;
 	}
 	.box {
 		padding: r(30);
