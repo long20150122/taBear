@@ -19,13 +19,32 @@
 					<div class="body-wrapper">
 						<div class="insearch-wrapper">这是搜索框</div>
 						aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+						<div class="zt-wrapper" id="zt-wrapper">
+							<div class="zt-item">
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1837408469,3117811683&fm=27&gp=0.jpg" alt="">
+							</div>
+							<div class="zt-item">
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1837408469,3117811683&fm=27&gp=0.jpg" alt="">
+							</div>
+							<div class="zt-item">
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1837408469,3117811683&fm=27&gp=0.jpg" alt="">
+							</div>
+							<div class="zt-item">
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1837408469,3117811683&fm=27&gp=0.jpg" alt="">
+							</div>
+							<div class="zt-item">
+								<img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1837408469,3117811683&fm=27&gp=0.jpg" alt="">
+							</div>
+						</div>
+
 						<div class="intoptap-wrapper">            
 							<div class="title-wrapper">
-				                <p class="active-tap">推荐</p>
-				                <p>附近</p>
-				                <p>海上餐厅</p>
-				                <p>潜水</p>
-				                <p>赶海</p>
+				                <p class="active-tap" @click="userSelect">推荐</p>
+				                <p @click="userSelect">附近</p>
+				                <p @click="userSelect">海上餐厅</p>
+				                <p @click="userSelect">潜水</p>
+				                <p @click="userSelect">赶海</p>
 				            </div>
 				        </div>
 					</div>
@@ -152,7 +171,8 @@ export default {
 		    // pullUpLoad: this.pullup,
 		    pullUpLoad: {
 			  	threshold: 50
-			}
+			},
+			eventPassthrough: 'horizontal'
 		})
 		// 是否派发滚动到底部事件，用于上拉加载
         if (this.scroll) {
@@ -190,7 +210,9 @@ export default {
           	})
         }
 		
-
+        // this.$nextTick(function () {
+        // 	new McScroll.init('zt-wrapper');
+        // })
 
 	},
 	methods: {
@@ -288,8 +310,11 @@ export default {
 			this.$nextTick(()=>{
 				this._initWaterFull()
 			});
+		},
+		userSelect () {
+			// console.log('tap');
+			alert('tap');
 		}
-
 	},
 	destroy() {
 
@@ -376,6 +401,23 @@ export default {
 			text-align: center;
 			font-size: r(30);
 			background-color: pink;
+		}
+		.zt-wrapper {
+			// @include display-flex();
+			width: r(750);
+			overflow: scroll;
+			white-space:nowrap;
+			.zt-item {
+				width: r(420);
+				height: r(220);
+				border-radius: r(10);
+				display: inline-block;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
 		}
 		.intoptap-wrapper {
 			// position: absolute;

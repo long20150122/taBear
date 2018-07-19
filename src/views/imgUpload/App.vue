@@ -1,12 +1,5 @@
 <template>
     <div class="wrapper">
-
-        <!-- <app-nav-items v-if="options.bottomNavItems">
-            <app-item icon="home" selected="true" name="推荐"></app-item>
-            <app-item icon="find" :href="options.bottomNavItems[1]" name="发现"></app-item>
-            <app-item icon="store" :href="options.bottomNavItems[2]" name="商城"></app-item>
-            <app-item icon="me" :href="options.bottomNavItems[3]" name="我的"></app-item>
-        </app-nav-items> -->
         <div class="header-wrapper">
             所有照片
             <div class="next">
@@ -24,7 +17,8 @@
             <div class="item7"><img src="" alt=""></div>
             <div class="item8"><img src="" alt=""></div>
             <div class="item9"><img src="" alt=""></div> -->
-            <div class="item" v-for="item in imgArr" >
+            <div class="item" v-for="(item, index) in imgArr" >
+                <div class="del" @click="del(index)"></div>
                 <img :src="item" alt="">
             </div>
         </div>
@@ -70,7 +64,6 @@ export default {
                 files.forEach(function (file, i) {
                     var reader = new FileReader();
                     reader.onload=function(){
-console.log(reader.result);
                         vm.imgArr.push(reader.result);
                         /*var imgO = document.createElement("img");
                         imgO.src = reader.result;*/
@@ -80,9 +73,12 @@ console.log(reader.result);
                 });
             }, false);
         })
-
     },
-    methods: {}
+    methods: {
+        del(val) {
+            this.imgArr.splice(val,1);
+        }
+    }
 }
 
 </script>
@@ -135,10 +131,20 @@ console.log(reader.result);
         @include justify-content(center);
         @include align-items(center);
         div {
+            position: relative;
             width: r(220);
             height: r(220);
             background-color: #123456;
             margin: r(10);
+            .del {
+                position: absolute;
+                top: r(-20);
+                right: r(-20);
+                width: r(40);
+                height: r(40);
+                border-radius: 50%;
+                background-color: pink;
+            }
             img {
                 width: 100%;
                 height: 100%;
