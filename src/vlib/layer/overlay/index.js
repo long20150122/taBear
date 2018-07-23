@@ -1,6 +1,6 @@
 /************
  * 遮罩层
- * 璩小孩 20170801
+ * ft 20170801
  */
 import Vue from 'vue'
 import overlay from './overlay.vue';

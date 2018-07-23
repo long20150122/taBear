@@ -2,7 +2,7 @@
  * 获取元素的宽高
  * @param element
  * @returns {{width: number, height: number}}
- * 璩小孩：20170803
+ * ft：20170803
  */
 import getStyle from './getStyle'
 
