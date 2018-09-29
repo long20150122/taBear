@@ -34,3 +34,10 @@ App.vue ------ 组件总容器 (内部可以通过conponents 引入子组件)
 ## ydui,UI框架使用说明
 http://vue.ydui.org/
 
+
+#后续引入
+
+## vue-photo-preview (处理图片滑动放大缩小，和点击指定的打开)
+## vue-awesome-swiper （vue的swiper滑块）
+
+## webpack安装了组件性能分析模块    webpack-bundle-analyzer

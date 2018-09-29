@@ -4,6 +4,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BabiliWebpackPlugin = require("babili-webpack-plugin"); // 由于webpack.optimize.UglifyJsPlugin不支持es6，用它代替来压缩文件
 const ExtractTextPlugin = require("extract-text-webpack-plugin"); // 将css抽离出来
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //  分享性能
 const root = path.resolve(__dirname);
 const entries = {};
 const htmlWebpackPlugins = [];
@@ -83,6 +84,8 @@ if (isProduction) {
             "comments": false,
         })
     );
+
+    plugins.push(new BundleAnalyzerPlugin());
 
 } else if (process.env.NODE_ENV == "dev") {
     plugins.push(new webpack.HotModuleReplacementPlugin());
