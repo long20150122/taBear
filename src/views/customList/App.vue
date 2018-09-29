@@ -108,6 +108,82 @@ export default {
         },{
             'customName': '京东计划',
             'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },{
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },
+        {
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },{
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },
+        {
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },{
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },
+        {
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },{
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
+        },{
+            'customName': '淘宝计划',
+            'name': '马云'
+        },
+        {
+            'customName': '小米计划',
+            'name': '雷军'
+        },{
+            'customName': '京东计划',
+            'name': '雷杰'
         }];
     },
     mounted () {},

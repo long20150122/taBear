@@ -1,6 +1,6 @@
 /**
  * 延时动画管理
- * by:璩 2017/9/7
+ * by:ft 2017/9/7
  */
 import {isObject, isFunction, isBoolean, isNumber} from './dataType'
 

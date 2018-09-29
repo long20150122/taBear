@@ -1,5 +1,5 @@
 /*******
- * 璩小孩
+ * ft
  * 底部导航 20170817
  */
 import appNavItems from './appNavItems.vue';

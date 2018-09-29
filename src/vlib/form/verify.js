@@ -33,7 +33,7 @@
  * var m_verify = verify();
  * m_verify.bind("verify", function(){});
  * m_verify.add({name: {Required: true, Text: "姓名"}, mobile: {Mobile: true, Text: "手机号"}});
- * m_verify.run({name: "璩", mobile: "1451444aa"});
+ * m_verify.run({name: "ft", mobile: "1451444aa"});
  */
 import {isObject, isUndefined, isBoolean, isFunction, isArray, isString, isNumber} from 'vlib/util/dataType'
 import regular from './regular'

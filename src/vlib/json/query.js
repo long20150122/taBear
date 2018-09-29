@@ -2,7 +2,7 @@
  * 对对象和字符串处理
  * parse a=1&b=2 => {a:1, b: 2}
  * stringify {a:1, b: 2} => a=1&b=2
- * 璩 2017/09/15
+ * ft 2017/09/15
  */
 export default {
     parse (qs, sep, eq, options) {

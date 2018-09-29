@@ -1,6 +1,6 @@
 /**
  * 对安卓手机键盘弹出会把页面顶上去的问题做兼容处理
- * 璩：2017-09-13
+ * ft：2017-09-13
  */
 import {getOffset} from 'lib/dom/domUtil'
 import closest from 'lib/dom/closest'

@@ -1,5 +1,5 @@
 /**
- * by 璩
+ * by ft
  * 对数据进行过滤
  */
 import {isObject, isUndefined, isArray, isString} from 'vlib/util/dataType'

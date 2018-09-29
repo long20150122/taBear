@@ -1,6 +1,6 @@
 /*******
  * 往上一层一层查找滚动节点
- * 璩：2017/9/19
+ * ft：2017/9/19
  */
 
 import getStyle from 'vlib/util/getStyle'

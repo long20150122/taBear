@@ -1,5 +1,5 @@
 /*******
- * 璩小孩
+ * ft
  * 懒加载图片 20170817
  */
 import lazyImage from './lazyImage.vue';

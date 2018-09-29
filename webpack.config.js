@@ -101,10 +101,10 @@ module.exports = {
     "devServer": {
         contentBase: dist,
         inline: true,
-        host: '172.22.24.63',
+        host: '10.103.1.30',
         port: 8087,
         hot: true,
-        open: false,
+        open: true,
         proxy: proxyOpts,
         watchContentBase: false,
         watchOptions: {

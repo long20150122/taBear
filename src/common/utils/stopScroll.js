@@ -1,6 +1,6 @@
 /******
  * 禁止滚动
- * 璩 2017/09/14
+ * ft 2017/09/14
  */
 import getStyle from 'vlib/util/getStyle'
 import {isElement, isNode, isFunction } from  'vlib/util/dataType'

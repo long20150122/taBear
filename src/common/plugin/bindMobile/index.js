@@ -1,5 +1,5 @@
 /*******
- * 璩小孩
+ * ft
  * 绑定手机号 20170822
  */
 import bindMobile from './bindMobile.vue';

@@ -1,6 +1,6 @@
 /**********
  * 弹框
- * 璩小孩 20170802
+ * ft 20170802
  */
 
 import dialog from "vlib/layer/dialog";
