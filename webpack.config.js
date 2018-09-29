@@ -84,8 +84,8 @@ if (isProduction) {
             "comments": false,
         })
     );
-
     plugins.push(new BundleAnalyzerPlugin());
+
 
 } else if (process.env.NODE_ENV == "dev") {
     plugins.push(new webpack.HotModuleReplacementPlugin());
