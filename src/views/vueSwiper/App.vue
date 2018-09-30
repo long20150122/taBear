@@ -3,7 +3,7 @@
     https://www.npmjs.com/package/vue-awesome-swiper
 -->
 <template>
-    <div class="">
+    <div class="" v-if="imgArr.length > 0">
         <!-- <app-nav-items v-if="options.bottomNavItems">
             <app-item icon="home" selected="true" name="推荐"></app-item>
             <app-item icon="find" :href="options.bottomNavItems[1]" name="发现"></app-item>
@@ -12,7 +12,10 @@
         </app-nav-items> -->
         <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
             <!-- slides -->
-            <swiper-slide>
+            <swiper-slide v-for="item in imgArr">
+                <img :src="item.src" alt="" @click.prevent >
+            </swiper-slide>
+            <!-- <swiper-slide>
                 <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1151633707,1349380576&fm=27&gp=0.jpg" alt="" @click.prevent >
             </swiper-slide>
             <swiper-slide>
@@ -32,7 +35,7 @@
             </swiper-slide>
             <swiper-slide>
                 <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=734739261,2548030601&fm=27&gp=0.jpg" alt="">
-            </swiper-slide>
+            </swiper-slide> -->
             <!-- Optional controls -->
             <!-- <div class="swiper-pagination" slot="pagination"></div>
             <div class="swiper-button-prev" slot="button-prev"></div>
@@ -41,6 +44,7 @@
         </swiper>
     </div>
 </template>
+
 
 <script>
 // import appHeader from './Header.vue'
@@ -61,6 +65,7 @@ export default {
     props: ["options", "proxy"],
     data() {
         return {
+            imgArr: [],
             swiperOption: {
                 // some swiper options/callbacks
                 // 所有的参数同 swiper 官方 api 参数
@@ -98,6 +103,17 @@ export default {
             }
         }
     },
+    created() {
+        this.$http.get('http://localhost:8888/api/imgArr', {}).then((res) => {
+            let data = res.data;
+            if (res.code == 0) {
+                this.imgArr = res.data;
+            }
+        }).catch((err) => {
+            // dialogManager.toast(err.msg || "");
+            console.log("err=>",err);
+        })
+    },
     components: {
         // appHeader,
         // appContent
@@ -127,7 +143,7 @@ export default {
         .swiper-wrapper {
             .swiper-slide {
                 width: r(680);
-                height: r(616);
+                height: r(540);
                 background-size: 100% 100%;
                 img {
                     width: 100%;
