@@ -24,6 +24,7 @@ viewport.init(1);
 Vue.config.productionTip = false;
 Vue.prototype.$http = Axios;
 
+
 new Vue({
     el: "#app",
     data () {
